@@ -1,0 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix auto-vc: <https://spec.edmcouncil.org/auto/ontology/VC/VehicleCore/> .
+@prefix auto-vp: <https://spec.edmcouncil.org/auto/ontology/VC/VehicleParts/> .
+
+auto-vc:PassengerCar rdfs:subClassOf DigitalTwin:Product .
+
+auto-vp:VehiclePart rdfs:subClassOf DigitalTwin:Product .
