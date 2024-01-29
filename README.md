@@ -83,4 +83,9 @@ Additionally, a helping ontology developed by TNO is also provided, so all the f
 ## Electronics
 The ontology used for electronics has been developed by Anelia Kurteva at TU Delft and can be found [here](https://github.com/RePlanIT/Ontology).
 
+## Demo environment to test semantic interoperability
+In the Datapipe research project we have set up a network of [FEDeRATED nodes](https://github.com/Federated-BDI/Docker-BDI-Node/tree/main) to highlight how message models created from semantic models interconnected through the upper ontology and the industry-specific alignments can be transmitted between multiple parties in a decentralized manner.
+
+We have constructed the message models using [Semantic Treehouse](https://service-registry.federatedplatforms.eu/#/).
+
 ## More to come - Textiles and LCA
