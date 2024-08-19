@@ -1,0 +1,54 @@
+@prefix ex: <http://example.com/base#> .
+@prefix DigitalTwin: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+@prefix Event: <https://ontology.tno.nl/logistics/federated/Event#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix auto-vc: <https://spec.edmcouncil.org/auto/ontology/VC/VehicleCore/> .
+@prefix catenax: <https://ontology.tno.nl/catenaxInterpretation#> .
+@prefix replanit: <http://www.semanticweb.org/RePlanIT/> .
+
+ex:plastic_casing a DigitalTwin:Product;
+    DigitalTwin:digitalTwinID "PC-01";
+    DigitalTwin:netMass 2 .
+
+ex:glass_piece a DigitalTwin:Product;
+    DigitalTwin:digitalTwinID "GP-01";
+    DigitalTwin:netMass 10 .
+
+ex:control_system a replanit:ICTDevice;
+    DigitalTwin:digitalTwinID "CS-01";
+    DigitalTwin:netMass 0.2;
+    replanit:ICTDeviceAge 0;
+    replanit:ICTDeviceSerialNumber "f48a5929-3a49-4caf-941f-f8eedc61b5d7";
+    replanit:hasBrand "NoBrand" .
+
+ex:switch a replanit:HardwareComponent;
+    DigitalTwin:digitalTwinID "S-01";
+    replanit:hasCurrentLifetime "2 years";
+    replanit:hasExpectedLifetime "2.5 years".
+
+ex:switch_control_system_Association a Event:Event;
+    Event:involvesDigitalTwin ex:control_system, ex:switch .
+
+ex:car_window a DigitalTwin:Product;
+    DigitalTwin:digitalTwinID "CW-01";
+    DigitalTwin:netMass 12.2 .
+
+ex:battery a catenax:BatteryPass ;
+    catenax:stateOfHealth 73 .
+
+ex:vehicleExample a auto-vc:PassengerCar ;
+    auto-vc:vehicleIdentificationNumber "fe2a25e1-e5a1-4ed5-b555-4c4bb16dc34e".
+
+ex:battery_car_Association a Event:Event ;
+    Event:involvesDigitalTwin ex:battery, ex:vehicleExample .
+
+ex:plastic_casing_car_window_Association a Event:Event ;
+    Event:involvesDigitalTwin ex:car_window, ex:plastic_casing .
+
+ex:glass_piece_car_window_Association a Event:Event ;
+    Event:involvesDigitalTwin ex:car_window, ex:glass_piece .
+
+ex:control_system_car_window_Association a Event:Event ;
+    Event:involvesDigitalTwin ex:car_window, ex:control_system .

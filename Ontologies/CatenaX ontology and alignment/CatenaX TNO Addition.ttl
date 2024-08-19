@@ -1,0 +1,406 @@
+@prefix catenaxAddition: <https://ontology.tno.nl/catenax-addition#> .
+@prefix catenax: <https://ontology.tno.nl/catenaxInterpretation#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+catenaxAddition:judicialPersonTradeDetails a owl:DatatypeProperty ;
+    rdfs:comment "Trade details of the judicial person: trade name or registered trademark" ;
+    rdfs:label "Trade Name/ Registered Trademark" ;
+    rdfs:domain catenax:JudicialPersonIdentification ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:encounteredNegativeEvents a owl:DatatypeProperty ;
+    rdfs:comment "The number of encountered negative events (such as accidents)" ;
+    rdfs:label "Encountered Negative Events" ;
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:nonNegativeInteger ;
+.
+catenaxAddition:batteryCategory a owl:DatatypeProperty ;
+    rdfs:comment "Categories relevant for the battery passport: `LMT battery`, `electric vehicle battery` or `industrial battery`. The latter includes the subcategory `stationary battery energy storage system` complemented by `other industrial batteries` (Art. 2)." ;
+    rdfs:label "Battery Category" ;
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:declarationOfConformityID a owl:DatatypeProperty ;
+    rdfs:comment "Identification number of the EU declaration of conformity of the battery, linked to the  Battery Carbon Footprint Declaration." ;
+    rdfs:label "ID of EU declaration of conformity" ;
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:separateCollectionSymbol a owl:ObjectProperty ;
+    rdfs:comment "Separate collection' or 'WEEE label' indicating that a product should not be discarded as unsorted waste but must be sent to separate collection facilities for recovery and recycling. To be printed on the physical label and displayed via the battery passport, suggested to be translated also to text to ensure machine readability." ;
+    rdfs:label "Separate Collection Symbol" ;
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:meaningLabelsAndSymbols a owl:ObjectProperty ;
+    rdfs:comment "Explanation of the meaning of all symbols and labels (including separate collection; cadmium and lead; and carbon footprint and carbon footprint performance class symbols; and symbols and labels printed on batteries or their accompanying documents but not accessible via the battery passport)." ;
+    rdfs:label "Meaning of labels and symbols" ;
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:environmentalOperatingTemperature a owl:DatatypeProperty ;
+    rdfs:comment "The environmental operating temperature should be periodically (daily frequency) available." ;
+    rdfs:label "Environmental Operating Temperature (daily average)" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:averageTemperatureUsage a owl:DatatypeProperty ;
+    rdfs:comment "The average battery temperature shoud be available (that the battery has been used in)" ;
+    rdfs:label "Average Temperature Under Usage" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:minimalTemperatureUsage a owl:DatatypeProperty ;
+    rdfs:comment "The minimal battery temperature shoud be available (that the battery has been used in)" ;
+    rdfs:label "Minimal Temperature Under Usage" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:maximumTemperatureUsage a owl:DatatypeProperty ;
+    rdfs:comment "The maximum battery temperature shoud be available (that the battery has been used in)" ;
+    rdfs:label "Maximum Temperature Under Usage" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:averageTemperatureCharging a owl:DatatypeProperty ;
+    rdfs:comment "The average battery temperature during charging should be available." ;
+    rdfs:label "Average Temperature Under Charging" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:minimalTemperatureCharging a owl:DatatypeProperty ;
+    rdfs:comment "The minimal battery temperature during charging should be available." ;
+    rdfs:label "Minimal Temperature Under Charging" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:maximumTemperatureCharging a owl:DatatypeProperty ;
+    rdfs:comment "The maximum battery temperature during charging should be available." ;
+    rdfs:label "Maximum Temperature Under Charging" ;
+    rdfs:domain catenax:TemperatureProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:minimalOperatingCurrent a owl:DatatypeProperty ;
+    rdfs:comment "The minimal operating current should be available (in which the battery has been used in, to detect abuse)" ;
+    rdfs:label "Minimal Operating Current" ;
+    rdfs:domain catenax:VoltageProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:maximumOperatingCurrent a owl:DatatypeProperty ;
+    rdfs:comment "The maximum operating current should be available (in which the battery has been used in, to detect abuse)" ;
+    rdfs:label "Maximum Operating Current" ;
+    rdfs:domain catenax:VoltageProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:cadmiumSymbol a owl:DatatypeProperty ;
+    rdfs:comment "Cadmium symbol indicating the metal is contained in the battery above a defined threshold of 0.002%" ;
+    rdfs:label "Cadmium Symbol Present (Y/N)" ;
+    rdfs:domain catenax:CompositionProperties ;
+    rdfs:range xsd:boolean
+.
+catenaxAddition:leadSymbol a owl:DatatypeProperty ;
+    rdfs:comment "Lead symbol indicating the metal is contained in the battery above a defined threshold of 0.004%" ;
+    rdfs:label "Lead Symbol Present (Y/N)" ;
+    rdfs:domain catenax:CompositionProperties ;
+    rdfs:range xsd:boolean
+.
+catenaxAddition:hasHazardousProperties a owl:ObjectProperty ;
+    rdfs:comment "Hazardous Properties of a Material" ;
+    rdfs:label "Hazardous Properties" ;
+    rdfs:domain catenax:MaterialNameAndWeightAndPercentageMassFraction ;
+    rdfs:range catenax:HazardousProperties ;
+.
+catenaxAddition:HazardousProperties a owl:Class ;
+    rdfs:comment "Hazardous Properties of a Material" ;
+    rdfs:label "Hazardous Properties" ;   
+.
+catenaxAddition:hazardCategory a owl:DatatypeProperty ;
+    rdfs:comment "Specify hazard classes and/ or categories of hazardous substances (as`any substance that poses a threat to human health and the environment`) as defined by the CLP Regulation" ;
+    rdfs:label "Hazard Category" ;   
+    rdfs:domain catenax:HazardousProperties ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:hazardIdentifiers a owl:DatatypeProperty ;
+    rdfs:comment "CAS number and CLP Regulation index number of all hazardous substance (as `any substance that poses a threat to human health and the environment`)" ;
+    rdfs:label "Hazard Identifiers" ;   
+    rdfs:domain catenax:HazardousProperties ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:locationHazardousSubstance a owl:DatatypeProperty ;
+    rdfs:comment "Location on a (sub-)component-level of all hazardous substances (as `any substance that poses a threat to human health and the environment`). Suggested via a unique identifier or nomenclature." ;
+    rdfs:label "Hazard Location" ;   
+    rdfs:domain catenax:HazardousProperties ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:concentrationRangeOfHazardousSubstances a owl:DatatypeProperty ;
+    rdfs:comment "Concentration range of all hazardous substances (as `any substance that poses a threat to human health and the environment`) in %, per (sub-)component of the battery, based on SCIP concentration ranges in weight by weight." ;
+    rdfs:label "Hazard Concentration Range (percent)" ;   
+    rdfs:domain catenax:HazardousProperties ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:impactOfSubstances a owl:DatatypeProperty ;
+    rdfs:comment "Impact statements based on, e.g., REACH or GHS for all hazard classes applicable to substances in the battery." ;
+    rdfs:label "Hazard Impact Of Substances on Environment" ;   
+    rdfs:domain catenax:HazardousProperties ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:ShareOfBatteryCarbonFootprint a owl:Class ;
+    rdfs:comment "The carbon footprint of the battery as share of total Battery Carbon Footprint, differentiated per life cycle stage as described in the essential elements of the Battery Regulation" ;
+    rdfs:label "Share of Battery Carbon Footprint" ;   
+.
+catenaxAddition:hasShareOfBatteryCarbonFootprint a owl:ObjectProperty ;
+    rdfs:comment "The battery presents the share of carbon footprint" ;
+    rdfs:label "Share of Battery Carbon Footprint" ;   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenaxAddition:ShareOfBatteryCarbonFootprint ;
+.
+catenaxAddition:shareOfBatteryCarbonFootprintLifeCycleName a owl:DatatypeProperty ;
+    rdfs:comment "Name of the Battery Carbon Footprint Life Cycle" ;
+    rdfs:label "Lifecycle name";   
+    rdfs:domain catenax:ShareOfBatteryCarbonFootprint ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:shareOfBatteryCarbonFootprintLifeCycleKgCO2 a owl:DatatypeProperty ;
+    rdfs:comment "Amount of CO2 emmited in this life cycle phase" ;
+    rdfs:label "Amount of CO2 emmitted (Kg)";   
+    rdfs:domain catenax:ShareOfBatteryCarbonFootprint ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:carbonFootprintPerformanceClass a owl:DatatypeProperty ;
+    rdfs:comment "EV, industrial and LMT batteries shall bear a conspicuous, clearly legible and indelible label indicating the carbon footprint performance class that the relevant battery model per manufacturing plant corresponds to. The carbon footprint performance class shall be accessible via the battery passport. A meaningful number of classes of performance will be developed, with category A being the best class with the lowest carbon footprint life cycle impact." ;
+    rdfs:label "Carbon Footprint Performance Class";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:carbonFootprintStudyLink a owl:DatatypeProperty ;
+    rdfs:comment "A web link to get access to a public version of the study supporting the carbon footprint values" ;
+    rdfs:label "Web link to public carbon footprint study";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:manualDissasemblyAndDismantlingBatteryPack a owl:ObjectProperty ;
+    rdfs:comment """To distinguish battery removal from the appliance and the disassembly of the battery pack, the Battery Pass consortium recommends that the dismantling information required by the Battery Regulation should be integrated into two separate manuals. (2) Manual for disassembly of the battery pack, including:
+- Exploded diagrams of the battery system/pack showing the location of the battery cells and modules, including format and dimensions of battery cells, modules and pack, and orientation of the battery cells
+- Type of construction of battery pack, modules, and cells
+- Information on replaceability of modules and cells (yes/no)
+- Disassembly sequences
+- Characteristics of joints, screws, and fasteners: type, number, materials, and number of fastening techniques to be unlocked
+- Information on fillings, if used: characteristics of foams and/or glues
+- Information on casing: type and material (steel/plastic)
+- Tools required for disassembly
+- Risk warnings and safety measures
+""" ;
+    rdfs:label "Manual for Disassembly and Dismantling of the Battery Pack";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:manualRemovalBatteryFromAppliance a owl:ObjectProperty ;
+    rdfs:comment """"To distinguish battery removal from the appliance and the disassembly of the battery pack, the Battery Pass consortium recommends that the dismantling information required by the Battery Regulation should be integrated into two separate manuals. (1) Manual for removal of the battery from the appliance, including: 
+- Disassembly sequences
+- Characteristics of the joints, screws, and fasteners: type, number, materials and number of fastening techniques to be unlocked
+- Tools required for disassembly
+- Risk warnings and safety measures"
+""" ;
+    rdfs:label "Manual for removal of the battery from the appliance ";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:dueDiligenceReport a owl:ObjectProperty ;
+    rdfs:comment "Report on the supply chain due diligence policy, risk management plan, and summary of third-party verification. Making due diligence report information available via the battery passport, at least via a link to the annual due diligence report valid for the specific battery at the time of placing on the market, as PDF uploaded to the company website. In addition, potentially making key information of the report available via the battery passport directly." ;
+    rdfs:label "Information of the due diligence report";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:extinguishingAgent a owl:DatatypeProperty ;
+    rdfs:comment "Usable extinguishing agend refering to classes of extinguishers (A, B, C, D, K)." ;
+    rdfs:label "Extinguishing agent";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range xsd:string ;
+.
+catenaxAddition:remainingPowerCapability a owl:DatatypeProperty ;
+    rdfs:comment "Remaining performance ability of the high voltage battery i.e. the amount of energy that a battery is capable to provide over a given period of time" ;
+    rdfs:label "Remaining Power Capability" ;
+    rdfs:domain catenax:BatteryPowerProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:remainingCapacity a owl:DatatypeProperty ;
+    rdfs:comment "The total remaining number of ampere-hours (Ah) that can be withdrawn from a fully charged battery under specific conditions" ;
+    rdfs:label "Remaining Capacity (Ah)" ;
+    rdfs:domain catenax:ElectrochemicalProperties ;
+    rdfs:range xsd:decimal ;
+.
+catenaxAddition:initialSelfDischargingRate a owl:DatatypeProperty ;
+    rdfs:comment "Initial self-discharge in % of capacity per unit of time in defined conditions (temperature range etc) as pre-use metric." ;
+    rdfs:label "Initial self-discharging rate (percent)" ;
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:currentSelfDischargingRate a owl:DatatypeProperty ;
+    rdfs:comment "Current self-discharge in % of capacity per unit of time in defined conditions (temperature range) during the use phase." ;
+    rdfs:label "Current self-discharging rate (percent)" ;
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:evolutionSelfDischargingRate a owl:DatatypeProperty ;
+    rdfs:comment "The increase of self-discharging rates in the use-phase as percentage with reference to the initial self-discharging rate." ;
+    rdfs:label "Evolution Self Discharging Rate" ;
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:hasRenewableContentShare a owl:ObjectProperty ;
+    rdfs:comment "Recycled material name and share from post/pre-consumer waste of the active material." ;
+    rdfs:label "Recycled material name and share from post/pre-consumer waste of the active material." ;
+    rdfs:domain catenax:Material ;
+    rdfs:range catenaxAddition:RenewableContentShare   
+.
+catenaxAddition:RenewableContentShare a owl:Class ;
+    rdfs:comment "Recycled material name and share from post/pre-consumer waste of the active material." ;
+    rdfs:label "Recycled material name and share from post/pre-consumer waste of the active material." ;   
+.
+catenaxAddition:hasPreConsumerRecycledMaterialShare a owl:ObjectProperty ;
+    rdfs:comment "Recycled material share from pre-consumer waste (manufacturing waste, excluding run-around scrap) of the active material." ;
+    rdfs:label "Recycled Material Share from pre-Consumer Waste" ;
+    rdfs:domain catenaxAddition:RenewableContentShare ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:hasPostConsumerRecycledMaterialShare a owl:ObjectProperty ;
+    rdfs:comment "Recycled material share from post-consumer waste (end-of-life scrap) of the active material." ;
+    rdfs:label "Recycled Material Share from post-Consumer Waste" ;
+    rdfs:domain catenaxAddition:RenewableContentShare ;
+    rdfs:range  xsd:decimal
+.
+catenaxAddition:roleOfEndUsersInWastePrevention a owl:ObjectProperty ;
+    rdfs:comment "Prevention and management of waste batteries: information on `the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing`." ;
+    rdfs:label "Role of End-Users in Waste Prevention";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:roleOfEndUsersInSeparateCollectionOfWasteBatteries a owl:ObjectProperty ;
+    rdfs:comment "Prevention and management of waste batteries: information on `the role of end-users in contributing to the separate collection of waste batteries in accordance with their obligations under Article 51 so as to allow their treatment`." ;
+    rdfs:label "Role of End-Users to the Separate Collection of Waste Batteries";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:informationOnSeparateCollectionTakeBackCollectionPointsPreparingForReusePreparingForRepurposingAndRecyclingOperations a owl:ObjectProperty ;
+    rdfs:comment "Prevention and management of waste batteries: Point (c) of Article 60(1): information on `the separate collection, the take-back, the collection points and preparing for re-use, preparing for repurposing, and recycling operations available for waste batteries`. " ;
+    rdfs:label "Information on separate collection, take back, collection points and preparing for re-use, preparing for repurposing and recycling operations";   
+    rdfs:domain catenax:BatteryPass ;
+    rdfs:range catenax:Attachment ;
+.
+catenaxAddition:certifiedUsableBatteryEnergy a owl:DatatypeProperty ;
+    rdfs:comment "Definition from UNECE GTR 22, applicable only to EVs. The energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached." ;
+    rdfs:label "Certified usable battery energy (UBEcertified) (kWh)";   
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:remainingUsableBatteryEnergy a owl:DatatypeProperty ;
+    rdfs:comment "Definition from UNECE GTR 22, applicable only to EVs.The UBE determined at the present point in the lifetime of the vehicle by the test procedure used for certification." ;
+    rdfs:label "Remaining usable battery energy (UBEcertified) (kWh)";   
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:stateOfCertifiedEnergy a owl:DatatypeProperty ;
+    rdfs:comment "Definition based on UNECE GTR 22: The measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy." ;
+    rdfs:label "Remaining usable battery energy (UBEcertified) (kWh)";   
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:roundTripEnergyEfficiencyAt50CycleLife a owl:DatatypeProperty ;
+    rdfs:comment "Round trip energy efficiency at 50% of cycle-life; measured at 50% of cycle life as determined in a pre-use standardized measurement." ;
+    rdfs:label "Round trip energy efficiency at 50% of cycle life (percentage)";   
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:remainingRoundTripEnergyEfficiency a owl:DatatypeProperty ;
+    rdfs:comment "Remaining round trip energy efficiency during the use-phase; definition of round-trip energy efficiency as provided in Battery Regulation." ;
+    rdfs:label "Remaining round trip energy efficiency";   
+    rdfs:domain catenax:BatteryEnergyProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:cellInternalResistanceCurrent a owl:DatatypeProperty ;
+    rdfs:comment "Current (in-use) internal resistance on battery cell level, if possible. Definition of internal resistance equal to regulation definition." ;
+    rdfs:label "Current internal resistance on battery cell level (Ohm)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:cellInternalResistanceIncrease a owl:DatatypeProperty ;
+    rdfs:comment "Internal resistance increase on battery cell level, if possible. Calculated from initial and current internal resistance on battery cell level." ;
+    rdfs:label "Internal resistance increase on battery cell level (percent)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:packInternalResistanceIncrease a owl:DatatypeProperty ;
+    rdfs:comment "Internal resistance increase on battery pack level, if possible. Calculated from initial and current internal resistance on battery pack level." ;
+    rdfs:label "Internal resistance increase on battery pack level (percent)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:moduleInternalResistanceInitial a owl:DatatypeProperty ;
+    rdfs:comment "Initial (pre-use) internal resistance on battery module level. Definition of internal resistance equal to regulation definition." ;
+    rdfs:label "Initial internal resistance on battery module level (Ohm)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:moduleInternalResistanceIncrease a owl:DatatypeProperty ;
+    rdfs:comment "Internal resistance increase on battery module level, if possible. Calculated from initial and current internal resistance on battery module level." ;
+    rdfs:label "Internal resistance increase on battery module level (percent)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:moduleInternalResistanceCurrent a owl:DatatypeProperty ;
+    rdfs:comment "Current (in-use) internal resistance on battery module level, if possible. Definition of internal resistance equal to regulation definition." ;
+    rdfs:label "Current internal resistance on battery module level (Ohm)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:packInternalResistanceCurrent a owl:DatatypeProperty ;
+    rdfs:comment "Current (in-use) internal resistance on battery pack level, if possible. Definition of internal resistance equal to regulation definition." ;
+    rdfs:label "Current internal resistance on battery pack level (Ohm)" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:deepDischargeEvents a owl:DatatypeProperty ;
+    rdfs:comment "Number of deep discharge events.The criteria to qualify an event as 'deep discharge' must be defined and consider different battery designs." ;
+    rdfs:label "Number of deep discharge events" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:overchargeEvents a owl:DatatypeProperty ;
+    rdfs:comment "Number of overcharge events. The criteria to qualify an event as 'overcharge' must be defined and consider different battery designs." ;
+    rdfs:label "Number of overcharge events" ;
+    rdfs:domain catenax:InternalResistanceProperties ;
+    rdfs:range xsd:integer ;
+.
+catenaxAddition:chargeDischargeCycles a owl:DatatypeProperty ;
+    rdfs:comment "Number of (full) charging and discharging cycles." ;
+    rdfs:label "Number of (full) charge-discharge cycles" ;
+    rdfs:domain catenax:BatteryCycleLifeProperties ;
+    rdfs:range xsd:integer
+.
+catenaxAddition:energyThroughput a owl:DatatypeProperty ;
+    rdfs:comment "Overall sum of the energy throughput over the battery lifetime. The data attribute should be reported as measured for further potential processing. In addition, the normalisation by usable battery energy could add a further useful value that ensures comparability among battery sizes.";
+    rdfs:label "Energy Throughput (kWh)" ;
+    rdfs:domain catenax:BatteryCycleLifeProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:capacityThroughput a owl:DatatypeProperty ;
+    rdfs:comment "Overall sum of the capacity throughput over the battery lifetime. The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity could add a further useful value that ensures comparability among battery sizes." ;
+    rdfs:label "Capacity Throughput (Ah)" ;
+    rdfs:domain catenax:BatteryCycleLifeProperties ;
+    rdfs:range xsd:decimal
+.
+catenaxAddition:cycleLifeReferenceTest a owl:DatatypeProperty ;
+    rdfs:comment "Specification of the applied cycle-life test." ;
+    rdfs:label "Cycle-life reference test" ;
+    rdfs:domain catenax:BatteryCycleLifeProperties ;
+    rdfs:range xsd:string
+.
+catenaxAddition:SOCEThresholdForExhaustion a owl:DatatypeProperty ;
+    rdfs:comment "Derived as analogue to, and potential future replacement of `Capacity threshold for exhaustion`. Interpreted as minimum percentage of SOCE, above which the battery is still considered operational as EV battery in its current life. The value has to be provided by the economic operator. The SOCE standard is only applicable to electric vehicle batteries. This metric may serve as indicator for a necessary end of current life as EV and may be understood in the context of warranty. A clarified definition is required." ;
+    rdfs:label "SOCE Threshold for Exhaustion (percent)";
+    rdfs:domain catenax:ElectrochemicalProperties ;
+    rdfs:range xsd:integer
+.
