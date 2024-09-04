@@ -2,9 +2,20 @@ This repository is part of the [Datapipe research project](https://www.tudelft.n
 
 # Semantic Interoperability and Application Profiles
 
-## Application Profile in Datapipe
+In the Datapipe research project we have created 2 [Application Profiles](https://joinup.ec.europa.eu/collection/semic-support-centre/application-profiles-what-are-they-and-how-model-and-reuse-them-properly-look-through-dcat-ap), to highlight the flexibility of a unified semantic approach based on a set of generic and industry specific ontologies that are customized to the needs of a use case through means of semantic connections. 
 
-In Datapipe we have created an example Application Profile based on the definition given by the European Comission through the Interoperable Europe SEMIC Support Centre [here](https://joinup.ec.europa.eu/collection/semic-support-centre/application-profiles-what-are-they-and-how-model-and-reuse-them-properly-look-through-dcat-ap). We have interpreted the definition and created our [UN Recommendation 46](https://unece.org/trade/publications/recommendation-no46-enhancing-traceability-and-transparency-sustainable-value) Application Profile considering the Core Vocabulary as the union of the [FEDeRATED upper ontology, the industry-specific ontologies and their alignment](./Ontologies/README.md). We have created the Application Profile to cover all the traceability properties found in the [product information](./UNR46%20queries/product-information.md) category. We have produced a separate file with example data and a SPARQL query, expressed using the Application Profile contained in this repository.
+The Application Profiles have been created based on the definition given by the European Comission through the Interoperable Europe SEMIC Support Centre:
+1. considering the Core Vocabulary as the union of the [FEDeRATED upper ontology, the industry-specific ontologies and their alignment](./Ontologies/README.md)
+2. for each use case identify the concepts not covered by the upper and aligned ontologies
+3. design the Application Profile as an RDF/OWL file, referencing within the file to the existing ontologies
+
+## Application Profile for EV Battery compliance check by authorities
+
+The Application Profile we have created for this use case can be found [here](./Technical%20resources/Application%20Profile%20example.ttl). Using this Application Profile, we have answered to the [authorities queries](./Authority%20Standardized%20Query%20Example.md).
+
+## Application Profile for UN Recommendation 46
+
+We have interpreted the definition and created our [UN Recommendation 46](https://unece.org/trade/publications/recommendation-no46-enhancing-traceability-and-transparency-sustainable-value) Application Profile . We have created the Application Profile to cover all the traceability properties found in the [product information](./UNR46%20queries/product-information.md) category. We have produced a separate file with example data and a SPARQL query, expressed using the Application Profile contained in this repository.
 
 # Blueprint for piloting
 
