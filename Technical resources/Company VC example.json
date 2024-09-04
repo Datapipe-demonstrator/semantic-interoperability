@@ -1,0 +1,23 @@
+{
+    "@context": "https://www.w3.org/ns/did/v1",
+    "id": "did:ebsi:example-Company",
+    "verificationMethod": [
+      {
+        "id": "did:ebsi:example-Company",
+        "type": "EcdsaSecp256k1VerificationKey2019",
+        "controller": "did:ebsi:example-Company",
+        "publicKeyHex": "02b463a6c5fb57bc5e2b36d7fd7a1fb15a5b6763e01b4b9b34f8b267d9e65f53b2"
+      }
+    ],
+    "authentication": [
+      "did:ebsi:example-12345abcde#keys-1"
+    ],
+    "service": [
+      {
+        "id": "did:ebsi:example-12345abcde#vcs",
+        "type": "VerifiableCredentialService",
+        "serviceEndpoint": "https://example.com/vc/"
+      }
+    ]
+  }
+  

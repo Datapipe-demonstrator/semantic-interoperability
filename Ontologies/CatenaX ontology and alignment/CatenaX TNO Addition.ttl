@@ -250,26 +250,16 @@ catenaxAddition:evolutionSelfDischargingRate a owl:DatatypeProperty ;
     rdfs:domain catenax:BatteryEnergyProperties ;
     rdfs:range xsd:decimal
 .
-catenaxAddition:hasRenewableContentShare a owl:ObjectProperty ;
-    rdfs:comment "Recycled material name and share from post/pre-consumer waste of the active material." ;
-    rdfs:label "Recycled material name and share from post/pre-consumer waste of the active material." ;
-    rdfs:domain catenax:Material ;
-    rdfs:range catenaxAddition:RenewableContentShare   
-.
-catenaxAddition:RenewableContentShare a owl:Class ;
-    rdfs:comment "Recycled material name and share from post/pre-consumer waste of the active material." ;
-    rdfs:label "Recycled material name and share from post/pre-consumer waste of the active material." ;   
-.
 catenaxAddition:hasPreConsumerRecycledMaterialShare a owl:ObjectProperty ;
     rdfs:comment "Recycled material share from pre-consumer waste (manufacturing waste, excluding run-around scrap) of the active material." ;
     rdfs:label "Recycled Material Share from pre-Consumer Waste" ;
-    rdfs:domain catenaxAddition:RenewableContentShare ;
+    rdfs:domain catenax:Material ;
     rdfs:range xsd:decimal
 .
 catenaxAddition:hasPostConsumerRecycledMaterialShare a owl:ObjectProperty ;
     rdfs:comment "Recycled material share from post-consumer waste (end-of-life scrap) of the active material." ;
     rdfs:label "Recycled Material Share from post-Consumer Waste" ;
-    rdfs:domain catenaxAddition:RenewableContentShare ;
+    rdfs:domain catenax:Material ;
     rdfs:range  xsd:decimal
 .
 catenaxAddition:roleOfEndUsersInWastePrevention a owl:ObjectProperty ;

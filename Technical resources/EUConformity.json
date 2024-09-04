@@ -1,0 +1,27 @@
+{
+    "@context": [
+      "https://www.w3.org/2018/credentials/v1",
+      "https://example.org/certifications#"
+    ],
+    "id": "urn:ebsi:credential:1234abcd-5678-efgh-9101-ijklmnopqrst",
+    "type": ["VerifiableCredential", "Certification"],
+    "issuer": {
+      "id": "did:example:issuer123",
+      "name": "Certification Authority"
+    },
+    "credentialSubject": {
+      "id": "did:ebsi:example-Company",
+      "certificationName": "Certified Battery Pass",
+      "certificationDate": "2024-09-01",
+      "validityPeriod": "2024-09-01/2027-09-01"
+    },
+    "issuanceDate": "2024-09-01T12:00:00Z",
+    "proof": {
+      "type": "Ed25519Signature2018",
+      "created": "2024-09-01T12:00:00Z",
+      "creator": "did:example:issuer123#key-1",
+      "nonce": "1234567890",
+      "signature": "base64-encoded-signature"
+    }
+  }
+  

@@ -1,0 +1,27 @@
+    @prefix federatedDT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+    @prefix federatedAR: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+    @prefix federatedEV: <https://ontology.tno.nl/logistics/federated/Event#> .
+    @prefix schema: <http://schema.org/> .
+    @prefix exAP: <https://own-data-shape#> .
+    
+    # QUALITY
+    exAP:characteristics a owl:DatatypeProperty ;
+        owl:equivalentProperty federatedDT:goodsDescription .
+
+    exAP:inspections a owl:DatatypeProperty ;
+        owl:equivalentProperty federatedDT:goodsDescription .
+
+    # Manufacturer identification
+    exAP:manufacturerIdentification a owl:DatatypeProperty ;
+        owl:equivalentProperty federatedDT:goodsDescription .
+
+    exAP:hasDocument a owl:ObjectProperty ;
+        rdfs:domain catenax:BatteryPass ;
+        rdfs:range federatedDT:document .
+
+    exAP:documentName a owl:DatatypeProperty ;
+        owl:equivalentProperty federatedDT:documentID .
+
+    exAP:batteryMaterial a owl:ObjectProperty ; 
+            rdfs:range catenax:Material ;
+            rdfs:domain catenax:BatteryPass .

@@ -1,0 +1,46 @@
+    @prefix federatedDT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+    @prefix federatedAR: <https://ontology.tno.nl/logistics/federated/ActorRoles#> .
+    @prefix federatedEV: <https://ontology.tno.nl/logistics/federated/Event#> .
+    @prefix schema: <http://schema.org/> .
+    @prefix exAP: <https://own-data-shape#> .
+    @prefix ex: <https://example.org#> .
+
+    ex:BatteryPassExample a catenax:BatteryPass ;
+        exAP:hasDocument ex:EUconformity ;
+        exAP:placeOfManufacturing "1234567890123@GLN" ;
+        exAP:manufacturerIdentification "did:ebsi:example-Company" ;
+        exAP:batteryMaterial catenax:BatteryPassExample_Nickel, catenax:BatteryPassExample_Cobalt, catenax:BatteryPassExample_Lithium, catenax:BatteryPassExample_Lead ;
+        catenax:hasBatteryEnergyProperties [
+            catenaxAddition:certifiedUsableBatteryEnergy 75 ;
+            catenaxAddition:remainingUsableBatteryEnergy 74 ;
+            catenaxAddition:stateOfCertifiedEnergy 73
+        ]
+    .
+
+    catenax:BatteryPassExample_Nickel a catenax:Material ;
+        catenax:materialName "Nickel" ;
+        catenaxAddition:hasPreConsumerRecycledMaterialShare 0.80 ;
+        catenaxAddition:hasPostConsumerRecycledMaterialShare 0.20
+    .
+
+    catenax:BatteryPassExample_Cobalt a catenax:Material ;
+        catenax:materialName "Cobalt" ;
+        catenaxAddition:hasPreConsumerRecycledMaterialShare 0.85 ;
+        catenaxAddition:hasPostConsumerRecycledMaterialShare 0.15
+    .
+
+    catenax:BatteryPassExample_Lithium a catenax:Material;
+        catenax:materialName "Lithium" ;
+        catenaxAddition:hasPreConsumerRecycledMaterialShare 0.90 ;
+        catenaxAddition:hasPostConsumerRecycledMaterialShare 0.10 
+    .
+
+    catenax:BatteryPassExample_Lead a catenax:Material ;
+        catenax:materialName "Lead" ;
+        catenaxAddition:hasPreConsumerRecycledMaterialShare 0.05 ;
+        catenaxAddition:hasPostConsumerRecycledMaterialShare 0.95
+    .
+
+    ex:EUconformity a DigitalTwin:Document ;
+        exAP:documentName "urn:ebsi:credential:1234abcd-5678-efgh-9101-ijklmnopqrst"
+    .
