@@ -1,0 +1,5 @@
+@prefix catenax: <urn:samm:io.catenax.battery.battery_pass:6.0.0#> .
+@prefix fedDT: <https://ontology.tno.nl/logistics/federated/DigitalTwin#> .
+
+catenax:BatteryPass rdfs:subClassOf fedDT:Product 
+.

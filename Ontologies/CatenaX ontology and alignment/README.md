@@ -1,4 +1,16 @@
-The ontology used for electric batteries is an RDF interpretation of the [CatenaX Battery Pass 3.0.1 Aspect Meta Model](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass/3.0.1).
+To facilitate the reusage of EV battery passport semantic properties, we have taken the [Battery Pass](https://github.com/eclipse-tractusx/sldt-semantic-models/tree/main/io.catenax.battery.battery_pass) data model from CatenaX.
+
+We have produced a direct alignment of the Battery Pass samm class from version 6.0.0. The files can be found [here](./samm%20version/).
+
+However, <i>samm</i> is not an RDF standardized data structure and thus we could not integrate it with the Vocabulary Hub functionality we advertised. This lead to us producing an owl version of the Battery Pass class and properties. This has been done on the version 3.0.1 of the Battery Pass. The files can be found [here](./owl%20version/).
+# SAMM CatenaX connection
+
+To make the connection between the SAMM Battery Pass and the FEDeRATED digital twin product concept, we have employed the `rdfs:subClassOf` function. Thus we have produced the following semantic line:
+```
+urn:samm:io.catenax.battery.battery_pass:6.0.0#BatteryPass rdfs:subClassOf https://ontology.tno.nl/logistics/federated/DigitalTwin#Product
+```
+
+# RDF interpretation
 The RDF interpretation has been achieved through manual conversion, by following the pseudocode algorithm:
 1. For every bamm:Entity, create a owl:Class with the same name. Each owl:Class then has rdfs:label the value of the bamm:name and rdfs:comment the value of bamm:description.
 
