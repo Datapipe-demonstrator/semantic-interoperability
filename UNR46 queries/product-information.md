@@ -69,7 +69,16 @@
 
 The query that would request all the data fields of the product information category of UN Recommendation 46:
 
-        SELECT ?
+        SELECT ?origin, ?materialComposition, ?productComponents, ?materialsSpecifications, ?productSpecifications, ?characteristics, ?inspections, ?certificates
         WHERE {
-            
+            ?battery a catenax:BatteryPass .
+            ?assemblyEvent a federatedEV:Event .
+            ?assemblyEvent federatedEV:involvesDigitalTwin ?battery ?productComponents .
+            ?assemblyEvent federatedEV:involvesLocation ?origin .
+            ?battery exAP:batteryMaterial ?materialComposition .
+            ?battery exAP:hasDocument ?certificates ?materialsSpecifications ?productSpecifications .
+            ?materialsSpecifications exAP:documentName "Materials Specifications" .
+            ?productSpecifications exAP:documentName "Product Specifications" .
+            ?battery exAP:characteristics ?characteristics .
+            ?battery exAP:inspections ?inspections .
         }
