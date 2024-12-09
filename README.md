@@ -96,7 +96,7 @@ We have created a blueprint for any company to follow, should they want to join 
         </tr>
         <tr>
             <td> a. Formulate queries using specific requirements on what to monitor, based on the aligned ontologies </td>
-            <td> Formulate queries based on the government requirements (see example <a href="./Import Example Query.md">here</a>) on what to monitor, based on the mapping between selected legislation and the semantic solution (aligned ontologies and application profile) </td>
+            <td> Formulate queries based on the government requirements (see example <a href="./Authority Standardized Query Example.md">here</a>) on what to monitor, based on the mapping between selected legislation and the semantic solution (aligned ontologies and application profile) </td>
             <td> In view of the battery regulation, customs may want to monitor the recycled content of Cobalt in a EV battery. In case this information is available by the battery producer to the EV producer and EV producer via its node can provide access to customs to this data, via a query to the EV producer node that is connected to the EV producer back end system, customs can obtain the required information. </td>
         </tr>
     </tbody>
