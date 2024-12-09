@@ -21,8 +21,6 @@ We have interpreted the definition and created our [UN Recommendation 46](https:
 
 We have created a blueprint for any company to follow, should they want to join the semantic data sharing network. The whitepaper detailing every step of the blueprint can be found at: [10.13140/RG.2.2.34052.74885](https://www.researchgate.net/publication/383659169_Government_Accessing_Business_Data_for_Compliance_Monitoring_of_Circular_Economy_DATAPIPE_White_paper?channel=doi&linkId=66d59bbdfa5e11512c47cd97&showFulltext=true). In the table below we focus on the technical steps (mainly Step 2), providing aiding resources in understanding the technical implementation.
 
-
-
 ## Technical Blueprint for Piloting
 
 <table>
@@ -72,10 +70,10 @@ We have created a blueprint for any company to follow, should they want to join 
             <td style="text-align: center;" colspan=4>  2.2. Refining the digital scope
         </tr>
         <tr>
-            <td>a. Decide which actors and <a href="./FEDeRATED%20nodes.md">FEDeRATED nodes</a> will be part of the data sharing network with the authorities for the piloting</td>
+            <td>a. Decide which actors and <a href="https://github.com/federatedplatforms/Docker-BDI-Node">FEDeRATED nodes</a> will be part of the data sharing network with the authorities for the piloting</td>
             <td>Decide on which actors are going to deploy their own nodes and which actors will make use of shared nodes in the data sharing network with the
-            <br> Make decisions whether some actors will implement a data push functionality in their system to the network or expose a data fetching endpoint to their system to allow authorities to pull <a href="./Data Complexity.md">minimal data </a> through the data sharing network.
-            <br> Make decsinios whether some actors will implement a data fetching endpoint to their systems to allow authorities to pull <a href="./Data Complexity.md">sensitive data </a> or they will implement a data push functionality
+            <br> Make decisions whether some actors will implement a data push functionality in their system to the network or expose a data fetching endpoint to their system to allow authorities to pull minimal data through the data sharing network.
+            <br> Make decsinios whether some actors will implement a data fetching endpoint to their systems to allow authorities to pull sensitive data or they will implement a data push functionality
             <br> Make decisions about the scope of testing (e.g. conceptual to test the semantics, with test nodes or with middleware solutions and close to operational systems) 
             <br> <i> Support: For inspiration, see the short and the long DATAPIPE demo videos  https://collegerama.tudelft.nl/Mediasite/Channel/datapipe-project/browse/null/most-recent/null/0/null </td>
             <td>the data sharing environment can be with one node for customs and one for the EV producer, where the battery data is made available to customs via the responsible economic operator, the EV producer. <br> Alternatively, there can be a set-up with three nodes, where customs queries the responsible economic operator, the EV producer about the battery. The EV producer redirects customs to the EV battery node producer who shares the data to customs via thier own node </td>
@@ -84,13 +82,13 @@ We have created a blueprint for any company to follow, should they want to join 
             <td style="text-align: center;" colspan=4> 2.3. Align ontologies and prepare the pilot data sharing environment
         </tr>
         <tr>
-            <td> a. Check the <a href="./Ontologies/README.md">industry specific ontologies </a>, <a href="https://github.com/federatedplatforms/FEDeRATED-Semantic-Model">the upper ontology</a> and if needed update the existing <a href="./Ontologies/Cross-industry alignment/Catenax and Automotive Alignment.ttl">alignment</a> of the industry specific ontologies to the upper ontology </td>
-            <td> Check whether the industry specific ontologies and the upper ontology cover concepts that correspond to the information needs of the authorities. If additional customizations are needed, identify additional relevant ontologies and create a custom Application Profile. <br> <i> Support tools: <a href="./STH-usage.md">Semantic treehouse</i></a> <br> <i> Additional documents:  D2.1, paper Chirvasuta et al. (2025), DATAPIPE GitHub (https://github.com/Datapipe-demonstrator/semantic-interoperability) and DATAPIPE developer’s video, the part on ontology alignment (https://collegerama.tudelft.nl/Mediasite/Channel/datapipe-project/browse/null/most-recent/null/0/null) </i>
+            <td> a. Check the <a href="./Ontologies/README.md">industry specific ontologies </a>, <a href="https://github.com/federatedplatforms/FEDeRATED-Semantic-Model">the upper ontology</a> and if needed update the existing <a href="./Ontologies/CatenaX ontology and alignment/owl version/CatenaX to FEDeRATED Alignment.ttl">alignment</a> of the industry specific ontologies to the upper ontology </td>
+            <td> Check whether the industry specific ontologies and the upper ontology cover concepts that correspond to the information needs of the authorities. If additional customizations are needed, identify additional relevant ontologies and create a custom Application Profile. <br> <i> Support tools: <a href="https://www.semantic-treehouse.nl/docs/wizard/">Semantic treehouse Message model wizard</i></a> <br> <i> Additional documents:  D2.1, paper Chirvasuta et al. (2025), DATAPIPE GitHub (https://github.com/Datapipe-demonstrator/semantic-interoperability) and DATAPIPE developer’s video, the part on ontology alignment (https://collegerama.tudelft.nl/Mediasite/Channel/datapipe-project/browse/null/most-recent/null/0/null) </i>
             <td> Authorities would like to access information about electronics in the car. When checking about existing alignments they may find out that alignment of the upper ontology has been performed with the logistics, a battery and a car ontology, but not with an electronics ontology. In this case, a relevant electronic ontology would need to be identified and aligned. If no appropriate ontology is identified this may need to lead to an ontology development task
         </tr>
         <tr>
             <td> b. Generate node configurations for the pilot parties for data sharing and validation schemes </td>
-            <td> Generate node configurations in Semantic Treehouse as indicated <a href="./STH-usage.md">here</a>. <br> Based on the configurations, customize the node to participate in the data sharing network, as indicated <a href="./FEDeRATED nodes.md">here</a>.  </td>
+            <td> Generate node configurations with the Semantic Treehouse Message Model FIT Wizard. <br> Based on the configurations, customize the node to participate in the data sharing network.  </td>
             <td> The car producer instructions how to configure their own node and how to map the data about the car and the batteries available in the business systems to the semantics of the aligned ontologies. </td>
         </tr>
         <tr>

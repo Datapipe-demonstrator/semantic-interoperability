@@ -76,7 +76,8 @@ The query that would request all the data fields of the product information cate
             ?assemblyEvent federatedEV:involvesDigitalTwin ?battery ?productComponents .
             ?assemblyEvent federatedEV:involvesLocation ?origin .
             ?battery exAP:batteryMaterial ?materialComposition .
-            ?battery exAP:hasDocument ?certificates ?materialsSpecifications ?productSpecifications .
+            ?battery exAP:hasDocument ?certificates
+             ?materialsSpecifications ?productSpecifications .
             ?materialsSpecifications exAP:documentName "Materials Specifications" .
             ?productSpecifications exAP:documentName "Product Specifications" .
             ?battery exAP:characteristics ?characteristics .
