@@ -1,0 +1,633 @@
+{
+  "characteristics": {
+    "physicalDimension": {
+      "length": {
+        "value": 4711,
+        "unit": "unit:millimetre"
+      },
+      "width": {
+        "value": 815,
+        "unit": "unit:millimetre"
+      },
+      "weight": {
+        "value": 471100,
+        "unit": "unit:gram"
+      },
+      "height": {
+        "value": 815,
+        "unit": "unit:millimetre"
+      }
+    },
+    "warranty": {
+      "lifeValue": 7,
+      "lifeUnit": "unit:year"
+    }
+  },
+  "metadata": {
+    "backupReference": "https://dummy.kia.com",
+    "registrationIdentifier": "https://dummy.kia.comlink/ID47110815",
+    "economicOperatorId": "KIA Corporation",
+    "lastModification": "2000-01-01",
+    "predecessor": "urn:uuid:00000000-0000-0000-0000-000000000000",
+    "issueDate": "2000-01-01",
+    "version": "1.0.0",
+    "passportIdentifier": "urn:uuid: 9876543210",
+    "status": "draft",
+    "expirationDate": "2100-01-01"
+  },
+  "commercial": {
+    "placedOnMarket": "2025-01-01",
+    "purpose": [
+      "automotive"
+    ]
+  },
+  "identification": {
+    "chemistry": "NMC",
+    "idDmc": "34567890",
+    "identification": {
+      "batch": [
+        {
+          "value": "BID9876543210",
+          "key": "batchId"
+        }
+      ],
+      "codes": [
+        {
+          "value": "8703 24 10 00",
+          "key": "TARIC"
+        }
+      ],
+      "type": {
+        "manufacturerPartId": "47110-EV851 ",
+        "nameAtManufacturer": "Battery EV3 LR"
+      },
+      "classification": [
+        {
+          "classificationStandard": "GIN 20510-21513",
+          "classificationID": "1004712",
+          "classificationDescription": "Generic standard for classification of parts in the automotive industry."
+        }
+      ],
+      "serial": [
+        {
+          "value": "SN1234567890",
+          "key": "partInstanceId"
+        }
+      ],
+      "dataCarrier": {
+        "carrierType": "QR",
+        "carrierLayout": "upper-left side"
+      }
+    },
+    "category": "Electric vehicle battery"
+  },
+  "performance": {
+    "rated": {
+      "roundTripEfficiency": {
+        "depthOfDischarge": 90.5,
+        "temperature": 20,
+        "50PercentLife": 89,
+        "initial": 4.711
+      },
+      "selfDischargingRate": 0.815,
+      "performanceDocument": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.kia.com"
+        }
+      ],
+      "testReport": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.kia.com"
+        }
+      ],
+      "temperature": {
+        "lower": -18,
+        "upper": 60
+      },
+      "lifetime": {
+        "report": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "cycleLifeTesting": {
+          "temperature": 20,
+          "depthOfDischarge": 90.5,
+          "appliedDischargeRate": 4,
+          "cycles": 1500,
+          "appliedChargeRate": 3
+        },
+        "expectedYears": 8
+      },
+      "power": {
+        "at20SoC": 35000,
+        "temperature": 20,
+        "value": 40000,
+        "at80SoC": 39000
+      },
+      "resistance": {
+        "temperature": 20,
+        "cell": 0.025,
+        "pack": 0.55,
+        "module": 0.2
+      },
+      "voltage": {
+        "temperature": 20,
+        "min": 81.5,
+        "nominal": 471.1,
+        "max": 471.1
+      },
+      "energy": {
+        "temperature": 20,
+        "value": 0.5
+      },
+      "capacity": {
+        "temperature": 20,
+        "value": 4711,
+        "thresholdExhaustion": 81.5
+      }
+    },
+    "dynamic": {
+      "selfDischargingRate": 0.25,
+      "roundTripEfficiency": {
+        "remaining": {
+          "value": 50,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "fade": {
+          "value": 50,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        }
+      },
+      "operatingEnvironment": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.link"
+        }
+      ],
+      "stateOfCharge": {
+        "value": 100,
+        "time": "2025-01-01T11:11:11.111+01:00"
+      },
+      "performanceDocument": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.link"
+        }
+      ],
+      "fullCycles": {
+        "value": "1",
+        "time": "2023-12-07T10:39:13.576+01:00"
+      },
+      "power": {
+        "remaining": {
+          "value": 40000,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "fade": {
+          "value": 50,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        }
+      },
+      "negativeEvents": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.link"
+        }
+      ],
+      "resistance": {
+        "increase": {
+          "cell": {
+            "value": 50,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          },
+          "pack": {
+            "value": 50,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          },
+          "module": {
+            "value": 50,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          }
+        },
+        "remaining": {
+          "cell": {
+            "value": 0.3,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          },
+          "pack": {
+            "value": 0.3,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          },
+          "module": {
+            "value": 0.3,
+            "time": "2023-12-07T10:39:13.576+01:00"
+          }
+        }
+      },
+      "capacity": {
+        "fade": {
+          "value": 50,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "throughput": {
+          "value": 4,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "capacity": {
+          "value": 4,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        }
+      },
+      "energy": {
+        "remaining": {
+          "value": 0.5,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "soce": {
+          "value": 50,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        },
+        "throughput": {
+          "value": 0.5,
+          "time": "2023-12-07T10:39:13.576+01:00"
+        }
+      }
+    }
+  },
+  "sources": [
+    {
+      "header": "Example Document XYZ",
+      "category": "Product Specifications",
+      "type": "URL",
+      "content": "https://dummy.link"
+    }
+  ],
+  "materials": {
+    "hazardous": [
+      {
+        "name": "cadmium",
+        "concentration": 5.3,
+        "recycled": 0,
+        "location": "Housing",
+        "critical": true,
+        "impactOfSubstances": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "materialUnit": "unit:partPerMillion",
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "mercury",
+        "concentration": 5.3,
+        "recycled": 0,
+        "location": "Housing",
+        "critical": true,
+        "impactOfSubstances": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "materialUnit": "unit:partPerMillion",
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "lead",
+        "concentration": 5.3,
+        "recycled": 12.5,
+        "location": "Housing",
+        "critical": true,
+        "impactOfSubstances": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "materialUnit": "unit:partPerMillion",
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "uranium dioxide",
+        "concentration": 100,
+        "recycled": 0,
+        "location": "Housing",
+        "critical": true,
+        "impactOfSubstances": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "materialUnit": "unit:partPerMillion",
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      }
+    ],
+    "active": [
+      {
+        "name": "nickel",
+        "location": "Cell",
+        "recycled": 8.15,
+        "critical": true,
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "lithium",
+        "location": "Cell",
+        "recycled": 8.15,
+        "critical": true,
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "cobalt",
+        "location": "Cell",
+        "recycled": 8.15,
+        "critical": true,
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "phenolphthalein",
+        "location": "Housing",
+        "recycled": 12.5,
+        "critical": true,
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ]
+      },
+      {
+        "name": "lead",
+        "recycled": 12.5,
+        "critical": true,
+        "impactOfSubstances": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "location": "Housing",
+        "concentration": 5.3,
+        "materialUnit": "unit:partPerMillion"
+      }
+    ]
+  },
+  "composition": [
+    {
+      "unit": "unit:partPerMillion",
+      "recycled": 0,
+      "critical": true,
+      "renewable": 0,
+      "documentation": [
+        {
+          "contentType": "URL",
+          "header": "Example Document XYZ",
+          "content": "https://dummy.link"
+        }
+      ],
+      "concentration": 0.1,
+      "location": "Cathode",
+      "id": [
+        {
+          "type": "CAS",
+          "name": " Graphite",
+          "id": "7782-42-5"
+        }
+      ]
+    }
+  ],
+  "safety": {
+    "usableExtinguishAgent": [
+      {
+        "fireClass": "B",
+        "document": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.kia.com"
+          }
+        ],
+        "media": "Dry Powder"
+      }
+    ],
+    "safeDischarging": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ],
+    "meaningOfLabels": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ],
+    "dismantling": [
+      {
+        "contentType": "URL",
+        "header": "IDIS",
+        "content": "https://www.idis2.com/"
+      }
+    ],
+    "removalFromAppliance": [
+      {
+        "contentType": "URL",
+        "header": "IDIS",
+        "content": " https://www.idis2.com/"
+      }
+    ],
+    "safetyMeasures": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ]
+  },
+  "handling": {
+    "applicable": true,
+    "content": {
+      "producer": [
+        {
+          "id": "BPNL0123456789ZZ"
+        }
+      ],
+      "sparePart": [
+        {
+          "manufacturerPartId": "123-0.740-3434-A",
+          "nameAtManufacturer": "Mirror left"
+        }
+      ]
+    }
+  },
+  "conformity": {
+    "declarationOfConformityId": " ID123456",
+    "thirdPartyAssurance": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ],
+    "resultOfTestReport": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ],
+    "declarationOfConformity": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ],
+    "dueDiligencePolicy": [
+      {
+        "contentType": "URL",
+        "header": "Example Document XYZ",
+        "content": "https://dummy.kia.com"
+      }
+    ]
+  },
+  "operation": {
+    "intoServiceDate": "2025-01-01",
+    "manufacturer": {
+      "facility": [
+        {
+          "facility": "Address: 6 Cheoyongsaneop-ro, Onsan-eup, Ulju-gun Ulsan, Ulsan, 44993 Republic Of Korea"
+        }
+      ],
+      "manufacturingDate": "08.2024",
+      "manufacturer": "BPNL6XI3KZ55MzYB"
+    }
+  },
+  "sustainability": {
+    "documents": [
+      {
+        "category": "separateCollection",
+        "contentType": "URL",
+        "header": "SC-001",
+        "content": "https://www.idis2.com/"
+      },
+      {
+        "category": "sustainabilityReport",
+        "contentType": "URL",
+        "header": "SR-001",
+        "content": "https://www.idis2.com/"
+      },
+      {
+        "category": "euTaxonomyDisclosureStatement",
+        "contentType": "URL",
+        "header": "ETDS-001",
+        "content": "https://www.idis2.com/"
+      },
+      {
+        "category": "wastePrevention",
+        "contentType": "URL",
+        "header": "WP-001",
+        "content": "https://www.idis2.com/"
+      }
+    ],
+    "carbonFootprint": [
+      {
+        "lifecycle": "main product production",
+        "rulebook": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.kia.com"
+          }
+        ],
+        "unit": "kg CO2 / kWh",
+        "performanceClass": "A",
+        "manufacturingPlant": [
+          {
+            "facility": "Ulsan"
+          }
+        ],
+        "type": "Climate Change Total",
+        "value": 0.00815,
+        "declaration": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.kia.com"
+          }
+        ]
+      }
+    ],
+    "status": "original"
+  }
+}
