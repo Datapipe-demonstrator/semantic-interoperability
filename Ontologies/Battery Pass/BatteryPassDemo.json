@@ -438,32 +438,32 @@
         "concentration": 5.3,
         "materialUnit": "unit:partPerMillion"
       }
+    ],
+    "composition": [
+      {
+        "unit": "unit:partPerMillion",
+        "recycled": 0,
+        "critical": true,
+        "renewable": 0,
+        "documentation": [
+          {
+            "contentType": "URL",
+            "header": "Example Document XYZ",
+            "content": "https://dummy.link"
+          }
+        ],
+        "concentration": 0.1,
+        "location": "Cathode",
+        "id": [
+          {
+            "type": "CAS",
+            "name": " Graphite",
+            "id": "7782-42-5"
+          }
+        ]
+      }
     ]
   },
-  "composition": [
-    {
-      "unit": "unit:partPerMillion",
-      "recycled": 0,
-      "critical": true,
-      "renewable": 0,
-      "documentation": [
-        {
-          "contentType": "URL",
-          "header": "Example Document XYZ",
-          "content": "https://dummy.link"
-        }
-      ],
-      "concentration": 0.1,
-      "location": "Cathode",
-      "id": [
-        {
-          "type": "CAS",
-          "name": " Graphite",
-          "id": "7782-42-5"
-        }
-      ]
-    }
-  ],
   "safety": {
     "usableExtinguishAgent": [
       {
