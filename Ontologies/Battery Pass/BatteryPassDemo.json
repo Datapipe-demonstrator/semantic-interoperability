@@ -24,9 +24,9 @@
     }
   },
   "metadata": {
-    "backupReference": "https://dummy.kia.com",
-    "registrationIdentifier": "https://dummy.kia.comlink/ID47110815",
-    "economicOperatorId": "KIA Corporation",
+    "backupReference": "https://dummy.example.com",
+    "registrationIdentifier": "https://dummy.example.comlink/ID47110815",
+    "economicOperatorId": "Example Corporation",
     "lastModification": "2000-01-01",
     "predecessor": "urn:uuid:00000000-0000-0000-0000-000000000000",
     "issueDate": "2000-01-01",
@@ -94,14 +94,14 @@
         {
           "contentType": "URL",
           "header": "Example Document XYZ",
-          "content": "https://dummy.kia.com"
+          "content": "https://dummy.example.com"
         }
       ],
       "testReport": [
         {
           "contentType": "URL",
           "header": "Example Document XYZ",
-          "content": "https://dummy.kia.com"
+          "content": "https://dummy.example.com"
         }
       ],
       "temperature": {
@@ -472,7 +472,7 @@
           {
             "contentType": "URL",
             "header": "Example Document XYZ",
-            "content": "https://dummy.kia.com"
+            "content": "https://dummy.example.com"
           }
         ],
         "media": "Dry Powder"
@@ -482,14 +482,14 @@
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ],
     "meaningOfLabels": [
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ],
     "dismantling": [
@@ -510,7 +510,7 @@
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ]
   },
@@ -536,28 +536,28 @@
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ],
     "resultOfTestReport": [
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ],
     "declarationOfConformity": [
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ],
     "dueDiligencePolicy": [
       {
         "contentType": "URL",
         "header": "Example Document XYZ",
-        "content": "https://dummy.kia.com"
+        "content": "https://dummy.example.com"
       }
     ]
   },
@@ -566,11 +566,11 @@
     "manufacturer": {
       "facility": [
         {
-          "facility": "Address: 6 Cheoyongsaneop-ro, Onsan-eup, Ulju-gun Ulsan, Ulsan, 44993 Republic Of Korea"
+          "facility": "Address: Anna van Buerenplein 1, 2595 DA Den Haag, Netherlands"
         }
       ],
       "manufacturingDate": "08.2024",
-      "manufacturer": "BPNL6XI3KZ55MzYB"
+      "manufacturer": "MTNO0XI0KZ00MzYB"
     }
   },
   "sustainability": {
@@ -607,14 +607,14 @@
           {
             "contentType": "URL",
             "header": "Example Document XYZ",
-            "content": "https://dummy.kia.com"
+            "content": "https://dummy.example.com"
           }
         ],
         "unit": "kg CO2 / kWh",
         "performanceClass": "A",
         "manufacturingPlant": [
           {
-            "facility": "Ulsan"
+            "facility": "AVB"
           }
         ],
         "type": "Climate Change Total",
@@ -623,7 +623,7 @@
           {
             "contentType": "URL",
             "header": "Example Document XYZ",
-            "content": "https://dummy.kia.com"
+            "content": "https://dummy.example.com"
           }
         ]
       }
