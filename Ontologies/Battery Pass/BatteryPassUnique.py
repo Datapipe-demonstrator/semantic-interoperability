@@ -32,21 +32,11 @@ else:
     with open(input_file, "r") as file:
         data = json.load(file)
 
-    # Replace metadata values with unique 5-character alphanumerical strings
-    metadata_keys = data["metadata"].keys()
-    for key in metadata_keys:
-        if key == "lastModification":
-            unique_value = generate_random_timestamp_2025()
-        else:
-            unique_value = generate_unique_code()
-        if key == "passportIdentifier":
-            output_file += unique_value
-        
+    unique_identifier = generate_unique_code()
+    data["identification"]["idDmc"] = unique_identifier
 
-        data["metadata"][key] = unique_value
-
-    # Export modified data back to a JSON file
-    with open(output_file+".json", "w") as file:
+        # Export modified data back to a JSON file
+    with open(output_file+unique_identifier+".json", "w") as file:
         json.dump(data, file, indent=2)
 
     print(f"Modified JSON data saved to '{output_file}'")

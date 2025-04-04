@@ -2,6 +2,12 @@ This repository is part of the [Datapipe research project](https://www.tudelft.n
 
 # Semantic Interoperability and Application Profiles
 
+## Battery Pass demo
+
+For the Battery Pass demo please refer [here](./Ontologies/Battery%20Pass/readme.md).
+
+## Application Profile example
+
 In the Datapipe research project we have created 2 [Application Profiles](https://joinup.ec.europa.eu/collection/semic-support-centre/application-profiles-what-are-they-and-how-model-and-reuse-them-properly-look-through-dcat-ap), to highlight the flexibility of a unified semantic approach based on a set of generic and industry specific ontologies that are customized to the needs of a use case through means of semantic connections. 
 
 The Application Profiles have been created based on the definition given by the European Comission through the Interoperable Europe SEMIC Support Centre:

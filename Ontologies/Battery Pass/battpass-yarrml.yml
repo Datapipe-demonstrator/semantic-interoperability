@@ -93,7 +93,7 @@ mappings:
     predicateobjects:
       - [a, battPass:Identification]
       - [battPass:category, $(category)]
-      - [battPass:iDmc, $(iDmc)]
+      - [battPass:idDmc, $(idDmc)]
       - [battPass:chemistry, $(chemistry)]
       - [battPass:manufacturerPartId, $(type.manufacturerPartId)]
       - [battPass:nameAtManufacturer, $(type.nameAtManufacturer)]

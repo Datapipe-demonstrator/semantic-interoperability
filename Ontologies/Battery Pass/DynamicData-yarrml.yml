@@ -43,6 +43,7 @@ mappings:
       - [battPass:lastModification, $(lastModification)]
       - [battPass:predecessor, $(predecessor)]
       - [battPass:status, $(status)]
+      - [battPass:economicOperatorId, $(economicOperatorId)]
 
   dynamicMapping:
     source:
