@@ -10,7 +10,7 @@
 map:map_dynamicMapping_000 rml:logicalSource map:source_002 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "dynamicMapping" ;
-	rr:predicateObjectMap map:pom_009, map:pom_010, map:pom_011 ;
+	rr:predicateObjectMap map:pom_009, map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014 ;
 	rr:subjectMap map:s_002 .
 
 map:map_eventMapping_000 rml:logicalSource map:source_000 ;
@@ -26,7 +26,7 @@ map:map_metadataMapping_000 rml:logicalSource map:source_001 ;
 	rr:subjectMap map:s_001 .
 
 map:om_000 rdf:type rr:ObjectMap ;
-	rr:constant dpp-battpass:battpass ;
+	rr:constant dpp-battpass:battpass_update ;
 	rr:termType rr:IRI .
 
 map:om_001 rdf:type rr:ObjectMap ;
@@ -65,10 +65,22 @@ map:om_009 rml:reference "stateOfCharge.value" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_010 rdf:type rr:ObjectMap ;
+map:om_010 rml:reference "stateOfHealth.value" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_011 rml:reference "cellVoltage" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_012 rml:reference "cellTemperature" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_013 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_metadataMapping_000 .
 
-map:om_011 rdf:type rr:ObjectMap ;
+map:om_014 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_dynamicMapping_000 .
 
 map:pm_000 rdf:type rr:PredicateMap ;
@@ -107,16 +119,25 @@ map:pm_010 rdf:type rr:PredicateMap ;
 map:pm_011 rdf:type rr:PredicateMap ;
 	rr:constant battPass:stateOfCharge .
 
+map:pm_012 rdf:type rr:PredicateMap ;
+	rr:constant battPass:stateOfHealth .
+
+map:pm_013 rdf:type rr:PredicateMap ;
+	rr:constant battPass:cellVoltage .
+
+map:pm_014 rdf:type rr:PredicateMap ;
+	rr:constant battPass:cellTemperature .
+
 map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_000 ;
 	rr:predicateMap map:pm_000 .
 
 map:pom_001 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_010 ;
+	rr:objectMap map:om_013 ;
 	rr:predicateMap map:pm_001 .
 
 map:pom_002 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_011 ;
+	rr:objectMap map:om_014 ;
 	rr:predicateMap map:pm_002 .
 
 map:pom_003 rdf:type rr:PredicateObjectMap ;
@@ -154,6 +175,18 @@ map:pom_010 rdf:type rr:PredicateObjectMap ;
 map:pom_011 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_009 ;
 	rr:predicateMap map:pm_011 .
+
+map:pom_012 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_010 ;
+	rr:predicateMap map:pm_012 .
+
+map:pom_013 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_011 ;
+	rr:predicateMap map:pm_013 .
+
+map:pom_014 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_012 ;
+	rr:predicateMap map:pm_014 .
 
 map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "demoBattPass:{identification.idDmc}_{metadata.lastModification}" .

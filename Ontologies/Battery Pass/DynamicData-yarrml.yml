@@ -43,7 +43,6 @@ mappings:
       - [battPass:lastModification, $(lastModification)]
       - [battPass:predecessor, $(predecessor)]
       - [battPass:status, $(status)]
-      - [battPass:economicOperatorId, $(economicOperatorId)]
 
   dynamicMapping:
     source:
@@ -53,6 +52,9 @@ mappings:
       - [a, battPass:Dynamic]
       - [battPass:selfDischargingRate, $(selfDischargingRate)]
       - [battPass:stateOfCharge, $(stateOfCharge.value)]
+      - [battPass:stateOfHealth, $(stateOfHealth.value)]
+      - [battPass:cellVoltage, $(cellVoltage)]
+      - [battPass:cellTemperature, $(cellTemperature)]
   
       
   

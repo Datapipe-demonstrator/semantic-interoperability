@@ -43,28 +43,31 @@ Copy your unique identifier generated at step "Customize Battery Pass"
 
 Call POST endpoint `https://demo-node1.k8s.basicdatasharinginfrastructure.net/api/events` with 
 - Headers: 
-    1. Key:`Event-Type`, Value: `dynamic-batpass-v1`
+    1. Key:`Event-Type`, Value: `june-dynamic`
     2. Key:`Event-Destinations`, Value: `O=Demo,L=Utrecht,C=NL` body (text/plain):
-- Body: [DynamicData](./DynamicData.json) with unique identifier
+- Body: [DynamicData](./updated-dynamicdata.json) with unique identifier
 
 ## Queries for self discharing rate and state of charge
 
 ### SoC and SDC filtered by passport identifier
-If you want to run example queries without posting your own data, you can replace the ?passIdentifier value in the FILTER clause with "jzk4Z"
+If you want to run example queries without posting your own data, you can replace the ?passIdentifier value in the FILTER clause with the value of the metadata.passportIdentifier from the [Dynamic data](./updated-dynamicdata.json) JSON file.
 
 Call POST endpoint `https://demo-node2.k8s.basicdatasharinginfrastructure.net/api/sparql` with body (text/plain):
 
 ```
-SELECT DISTINCT ?passIdentifier ?lastModification ?status ?SoC ?selfDischargingRate ?economicOperatorId
+SELECT DISTINCT ?passIdentifier ?lastModification ?predecessor ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
 WHERE {
   ?s a <http://dpp.example.org/batt-pass#battpass_update> .
   ?s <http://example.org/battpass#metadata> ?metadata.
   ?metadata <http://example.org/battpass#passportIdentifier> ?passIdentifier.
   ?metadata <http://example.org/battpass#lastModification> ?lastModification.
+  ?metadata <http://example.org/battpass#predecessor> ?predecessor.
   ?metadata <http://example.org/battpass#status> ?status.
-  ?metadata <http://example.org/battpass#economicOperatorId> ?economicOperatorId .
   ?s <http://example.org/battpass#dynamic> ?dynamicUpdate.
   ?dynamicUpdate <http://example.org/battpass#stateOfCharge> ?SoC.
+  ?dynamicUpdate <http://example.org/battpass#stateOfHealth> ?SoH.
+  ?dynamicUpdate <http://example.org/battpass#cellVoltage> ?cellVoltage.
+  ?dynamicUpdate <http://example.org/battpass#cellTemperature> ?cellTemperature.
   ?dynamicUpdate <http://example.org/battpass#selfDischargingRate> ?selfDischargingRate.
   FILTER(?passIdentifier = "#INSERT YOUR IDENTIFIER HERE#")
 }
