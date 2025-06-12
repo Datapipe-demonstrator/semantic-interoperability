@@ -7,125 +7,132 @@
 @prefix dpp-battpass: <http://dpp.example.org/batt-pass#> .
 @prefix battPass: <http://example.org/battpass#> .
 
+map:map_battpassMapping_000 rml:logicalSource map:source_000 ;
+	rdf:type rr:TriplesMap ;
+	rdfs:label "battpassMapping" ;
+	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003 ;
+	rr:subjectMap map:s_000 .
+
 map:map_dynamicMapping_000 rml:logicalSource map:source_002 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "dynamicMapping" ;
-	rr:predicateObjectMap map:pom_009, map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014 ;
+	rr:predicateObjectMap map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015 ;
 	rr:subjectMap map:s_002 .
-
-map:map_eventMapping_000 rml:logicalSource map:source_000 ;
-	rdf:type rr:TriplesMap ;
-	rdfs:label "eventMapping" ;
-	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002 ;
-	rr:subjectMap map:s_000 .
 
 map:map_metadataMapping_000 rml:logicalSource map:source_001 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "metadataMapping" ;
-	rr:predicateObjectMap map:pom_003, map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008 ;
+	rr:predicateObjectMap map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009 ;
 	rr:subjectMap map:s_001 .
 
 map:om_000 rdf:type rr:ObjectMap ;
 	rr:constant dpp-battpass:battpass_update ;
 	rr:termType rr:IRI .
 
-map:om_001 rdf:type rr:ObjectMap ;
+map:om_001 rml:reference "identification.idDmc" ;
+	rdf:type rr:ObjectMap ;
+	rr:termType rr:Literal .
+
+map:om_002 rdf:type rr:ObjectMap ;
 	rr:constant battPass:Metadata ;
 	rr:termType rr:IRI .
 
-map:om_002 rml:reference "passportIdentifier" ;
+map:om_003 rml:reference "passportIdentifier" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_003 rml:reference "version" ;
+map:om_004 rml:reference "version" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_004 rml:reference "lastModification" ;
+map:om_005 rml:reference "lastModification" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_005 rml:reference "predecessor" ;
+map:om_006 rml:reference "predecessor" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_006 rml:reference "status" ;
+map:om_007 rml:reference "status" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_007 rdf:type rr:ObjectMap ;
+map:om_008 rdf:type rr:ObjectMap ;
 	rr:constant battPass:Dynamic ;
 	rr:termType rr:IRI .
 
-map:om_008 rml:reference "selfDischargingRate" ;
+map:om_009 rml:reference "selfDischargingRate" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_009 rml:reference "stateOfCharge.value" ;
+map:om_010 rml:reference "stateOfCharge.value" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_010 rml:reference "stateOfHealth.value" ;
+map:om_011 rml:reference "stateOfHealth.value" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_011 rml:reference "cellVoltage" ;
+map:om_012 rml:reference "cellVoltage" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_012 rml:reference "cellTemperature" ;
+map:om_013 rml:reference "cellTemperature" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
-
-map:om_013 rdf:type rr:ObjectMap ;
-	rr:parentTriplesMap map:map_metadataMapping_000 .
 
 map:om_014 rdf:type rr:ObjectMap ;
+	rr:parentTriplesMap map:map_metadataMapping_000 .
+
+map:om_015 rdf:type rr:ObjectMap ;
 	rr:parentTriplesMap map:map_dynamicMapping_000 .
 
 map:pm_000 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
 map:pm_001 rdf:type rr:PredicateMap ;
-	rr:constant battPass:metadata .
+	rr:constant battPass:idDmc .
 
 map:pm_002 rdf:type rr:PredicateMap ;
-	rr:constant battPass:dynamic .
+	rr:constant battPass:metadata .
 
 map:pm_003 rdf:type rr:PredicateMap ;
-	rr:constant rdf:type .
+	rr:constant battPass:dynamic .
 
 map:pm_004 rdf:type rr:PredicateMap ;
-	rr:constant battPass:passportIdentifier .
-
-map:pm_005 rdf:type rr:PredicateMap ;
-	rr:constant battPass:version .
-
-map:pm_006 rdf:type rr:PredicateMap ;
-	rr:constant battPass:lastModification .
-
-map:pm_007 rdf:type rr:PredicateMap ;
-	rr:constant battPass:predecessor .
-
-map:pm_008 rdf:type rr:PredicateMap ;
-	rr:constant battPass:status .
-
-map:pm_009 rdf:type rr:PredicateMap ;
 	rr:constant rdf:type .
 
+map:pm_005 rdf:type rr:PredicateMap ;
+	rr:constant battPass:passportIdentifier .
+
+map:pm_006 rdf:type rr:PredicateMap ;
+	rr:constant battPass:version .
+
+map:pm_007 rdf:type rr:PredicateMap ;
+	rr:constant battPass:lastModification .
+
+map:pm_008 rdf:type rr:PredicateMap ;
+	rr:constant battPass:predecessor .
+
+map:pm_009 rdf:type rr:PredicateMap ;
+	rr:constant battPass:status .
+
 map:pm_010 rdf:type rr:PredicateMap ;
-	rr:constant battPass:selfDischargingRate .
+	rr:constant rdf:type .
 
 map:pm_011 rdf:type rr:PredicateMap ;
-	rr:constant battPass:stateOfCharge .
+	rr:constant battPass:selfDischargingRate .
 
 map:pm_012 rdf:type rr:PredicateMap ;
-	rr:constant battPass:stateOfHealth .
+	rr:constant battPass:stateOfCharge .
 
 map:pm_013 rdf:type rr:PredicateMap ;
-	rr:constant battPass:cellVoltage .
+	rr:constant battPass:stateOfHealth .
 
 map:pm_014 rdf:type rr:PredicateMap ;
+	rr:constant battPass:cellVoltage .
+
+map:pm_015 rdf:type rr:PredicateMap ;
 	rr:constant battPass:cellTemperature .
 
 map:pom_000 rdf:type rr:PredicateObjectMap ;
@@ -133,7 +140,7 @@ map:pom_000 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_000 .
 
 map:pom_001 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_013 ;
+	rr:objectMap map:om_001 ;
 	rr:predicateMap map:pm_001 .
 
 map:pom_002 rdf:type rr:PredicateObjectMap ;
@@ -141,7 +148,7 @@ map:pom_002 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_002 .
 
 map:pom_003 rdf:type rr:PredicateObjectMap ;
-	rr:objectMap map:om_001 ;
+	rr:objectMap map:om_015 ;
 	rr:predicateMap map:pm_003 .
 
 map:pom_004 rdf:type rr:PredicateObjectMap ;
@@ -188,6 +195,10 @@ map:pom_014 rdf:type rr:PredicateObjectMap ;
 	rr:objectMap map:om_012 ;
 	rr:predicateMap map:pm_014 .
 
+map:pom_015 rdf:type rr:PredicateObjectMap ;
+	rr:objectMap map:om_013 ;
+	rr:predicateMap map:pm_015 .
+
 map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "demoBattPass:{identification.idDmc}_{metadata.lastModification}" .
 
@@ -215,6 +226,6 @@ map:source_002 rml:iterator "$.performance.dynamic" ;
 	rdf:type rml:LogicalSource ;
 	rdfs:label "dynamic" .
 
-<http://mapping.example.com/rules_000> <http://rdfs.org/ns/void#exampleResource> map:map_dynamicMapping_000, map:map_eventMapping_000, map:map_metadataMapping_000 ;
+<http://mapping.example.com/rules_000> <http://rdfs.org/ns/void#exampleResource> map:map_battpassMapping_000, map:map_dynamicMapping_000, map:map_metadataMapping_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
 

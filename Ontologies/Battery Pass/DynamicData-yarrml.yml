@@ -19,12 +19,13 @@ sources:
     iterator: "$.performance.dynamic"
 
 mappings:
-  eventMapping:
+  battpassMapping:
     source:
         - dpp-battpass
     subject: demoBattPass:$(identification.idDmc)_$(metadata.lastModification)
     predicateobjects:
       - [a, dpp-battpass:battpass_update]
+      - [battPass:idDmc, $(identification.idDmc)]
       - p: battPass:metadata
         o:
         - mapping: metadataMapping
