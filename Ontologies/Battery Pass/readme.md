@@ -55,9 +55,10 @@ If you want to run example queries without posting your own data, you can replac
 Call POST endpoint `https://demo-node2.k8s.basicdatasharinginfrastructure.net/api/sparql` with body (text/plain):
 
 ```
-SELECT DISTINCT ?passIdentifier ?lastModification ?predecessor ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
+SELECT DISTINCT ?idDmc ?passIdentifier ?lastModification ?predecessor ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
 WHERE {
   ?s a <http://dpp.example.org/batt-pass#battpass_update> .
+  ?s <http://example.org/battpass#idDmc> ?idDmc.
   ?s <http://example.org/battpass#metadata> ?metadata.
   ?metadata <http://example.org/battpass#passportIdentifier> ?passIdentifier.
   ?metadata <http://example.org/battpass#lastModification> ?lastModification.
@@ -69,7 +70,8 @@ WHERE {
   ?dynamicUpdate <http://example.org/battpass#cellVoltage> ?cellVoltage.
   ?dynamicUpdate <http://example.org/battpass#cellTemperature> ?cellTemperature.
   ?dynamicUpdate <http://example.org/battpass#selfDischargingRate> ?selfDischargingRate.
-  FILTER(?passIdentifier = "#INSERT YOUR IDENTIFIER HERE#")
+  # choose which identification to use, ?passIdentifier or ?idDmc
+  FILTER(?idDmc = "INSERT HERE YOUR IDDMC")
 }
 LIMIT 100
 
@@ -77,10 +79,11 @@ LIMIT 100
 
 ### Latest SoC, SoH, cell voltage, and cell temperature per each battery
 ```
-SELECT DISTINCT ?passIdentifier ?lastModification ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
+SELECT DISTINCT ?idDmc ?passIdentifier ?lastModification ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
 WHERE {
   ?s a <http://dpp.example.org/batt-pass#battpass_update> .
-  ?s <http://example.org/battpass#metadata> ?metadata.
+  ?s <http://example.org/battpass#idDmc> ?idDmc .
+  ?s <http://example.org/battpass#metadata> ?metadata .
   ?metadata <http://example.org/battpass#passportIdentifier> ?passIdentifier.
   ?metadata <http://example.org/battpass#lastModification> ?lastModification.
   ?metadata <http://example.org/battpass#status> ?status.
@@ -95,14 +98,15 @@ WHERE {
   # Restrict to the latest modification timestamp
   FILTER(?lastModification = ?latestModification)
   
-  # Subquery to get the latest timestamp per passIdentifier
+  # Subquery to get the latest timestamp per passIdentifier / idDmc (in current example idDmc used)
   {
-    SELECT ?passIdentifier (MAX(?lastModification) AS ?latestModification)
+    SELECT ?idDmc (MAX(?lastModification) AS ?latestModification)
     WHERE {
-      ?metadata <http://example.org/battpass#passportIdentifier> ?passIdentifier.
+      ?s <http://example.org/battpass#idDmc> ?idDmc.
+      ?s <http://example.org/battpass#metadata> ?metadata .
       ?metadata <http://example.org/battpass#lastModification> ?lastModification.
     }
-    GROUP BY ?passIdentifier
+    GROUP BY ?idDmc
   }
 }
 LIMIT 100
