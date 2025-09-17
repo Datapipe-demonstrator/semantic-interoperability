@@ -32,30 +32,30 @@ mappings:
       - p: battPass:dynamic
         o:
         - mapping: dynamicMapping
-
+        
   metadataMapping:
     source:
-      - metadata
-    subject: battPass:demoBattPassMetadata
+      - dpp-battpass
+    subject: battPass:demoBattPassMetadata_$(identification.idDmc)_$(metadata.lastModification)
     predicateobjects:
       - [a, battPass:Metadata]
-      - [battPass:passportIdentifier, $(passportIdentifier)]
-      - [battPass:version, $(version)]
-      - [battPass:lastModification, $(lastModification)]
-      - [battPass:predecessor, $(predecessor)]
-      - [battPass:status, $(status)]
+      - [battPass:passportIdentifier, $(metadata.passportIdentifier)]
+      - [battPass:version, $(metadata.version)]
+      - [battPass:lastModification, $(metadata.lastModification)]
+      - [battPass:predecessor, $(metadata.predecessor)]
+      - [battPass:status, $metadata.(status)]
 
   dynamicMapping:
     source:
-      - dynamic
-    subject: battPass:demoBattPassDynamic
+      - dpp-battpass
+    subject: battPass:demoBattPassDynamic_$(identification.idDmc)_$(metadata.lastModification)
     predicateobjects:
       - [a, battPass:Dynamic]
-      - [battPass:selfDischargingRate, $(selfDischargingRate)]
-      - [battPass:stateOfCharge, $(stateOfCharge.value)]
-      - [battPass:stateOfHealth, $(stateOfHealth.value)]
-      - [battPass:cellVoltage, $(cellVoltage)]
-      - [battPass:cellTemperature, $(cellTemperature)]
+      - [battPass:selfDischargingRate, $(performance.dynamic.selfDischargingRate)]
+      - [battPass:stateOfCharge, $(performance.dynamic.stateOfCharge.value)]
+      - [battPass:stateOfHealth, $(performance.dynamic.stateOfHealth.value)]
+      - [battPass:cellVoltage, $(performance.dynamic.cellVoltage)]
+      - [battPass:cellTemperature, $(performance.dynamic.cellTemperature)]
   
       
   

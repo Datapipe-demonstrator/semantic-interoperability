@@ -1,21 +1,25 @@
 {
     "identification": {
-        "idDmc": "34567890"
+        "idDmc": "UNIQUEIDDMC-DEMO-PURPOSES"
     },
     "metadata": {
         "lastModification": "2025-03-23T09:00:00.000+01:00",
         "predecessor": "urn:uuid:230320250700",
-        "economicOperatorId": "Example Corporation",
         "version": "1.0.0",
         "passportIdentifier": "urn:uuid:230320250800",
         "status": "draft"
     },
     "performance": {
         "dynamic": {
-            "selfDischargingRate": 0.25,
+            "selfDischargingRate": 0,
             "stateOfCharge": {
                 "value": 100
-            }
+            },
+			"stateOfHealth": {
+				"value": 100
+			},
+			"cellVoltage": 0,
+			"cellTemperature": 0
         }
     }
 }

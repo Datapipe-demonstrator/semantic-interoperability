@@ -13,13 +13,13 @@ map:map_battpassMapping_000 rml:logicalSource map:source_000 ;
 	rr:predicateObjectMap map:pom_000, map:pom_001, map:pom_002, map:pom_003 ;
 	rr:subjectMap map:s_000 .
 
-map:map_dynamicMapping_000 rml:logicalSource map:source_002 ;
+map:map_dynamicMapping_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "dynamicMapping" ;
 	rr:predicateObjectMap map:pom_010, map:pom_011, map:pom_012, map:pom_013, map:pom_014, map:pom_015 ;
 	rr:subjectMap map:s_002 .
 
-map:map_metadataMapping_000 rml:logicalSource map:source_001 ;
+map:map_metadataMapping_000 rml:logicalSource map:source_000 ;
 	rdf:type rr:TriplesMap ;
 	rdfs:label "metadataMapping" ;
 	rr:predicateObjectMap map:pom_004, map:pom_005, map:pom_006, map:pom_007, map:pom_008, map:pom_009 ;
@@ -37,47 +37,47 @@ map:om_002 rdf:type rr:ObjectMap ;
 	rr:constant battPass:Metadata ;
 	rr:termType rr:IRI .
 
-map:om_003 rml:reference "passportIdentifier" ;
+map:om_003 rml:reference "metadata.passportIdentifier" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_004 rml:reference "version" ;
+map:om_004 rml:reference "metadata.version" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_005 rml:reference "lastModification" ;
+map:om_005 rml:reference "metadata.lastModification" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_006 rml:reference "predecessor" ;
+map:om_006 rml:reference "metadata.predecessor" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_007 rml:reference "status" ;
-	rdf:type rr:ObjectMap ;
+map:om_007 rdf:type rr:ObjectMap ;
+	rr:constant "$metadata.(status)" ;
 	rr:termType rr:Literal .
 
 map:om_008 rdf:type rr:ObjectMap ;
 	rr:constant battPass:Dynamic ;
 	rr:termType rr:IRI .
 
-map:om_009 rml:reference "selfDischargingRate" ;
+map:om_009 rml:reference "performance.dynamic.selfDischargingRate" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_010 rml:reference "stateOfCharge.value" ;
+map:om_010 rml:reference "performance.dynamic.stateOfCharge.value" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_011 rml:reference "stateOfHealth.value" ;
+map:om_011 rml:reference "performance.dynamic.stateOfHealth.value" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_012 rml:reference "cellVoltage" ;
+map:om_012 rml:reference "performance.dynamic.cellVoltage" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_013 rml:reference "cellTemperature" ;
+map:om_013 rml:reference "performance.dynamic.cellTemperature" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
@@ -203,10 +203,10 @@ map:s_000 rdf:type rr:SubjectMap ;
 	rr:template "demoBattPass:{identification.idDmc}_{metadata.lastModification}" .
 
 map:s_001 rdf:type rr:SubjectMap ;
-	rr:constant "http://example.org/battpass#demoBattPassMetadata" .
+	rr:template "http://example.org/battpass#demoBattPassMetadata_{identification.idDmc}_{metadata.lastModification}" .
 
 map:s_002 rdf:type rr:SubjectMap ;
-	rr:constant "http://example.org/battpass#demoBattPassDynamic" .
+	rr:template "http://example.org/battpass#demoBattPassDynamic_{identification.idDmc}_{metadata.lastModification}" .
 
 map:source_000 rml:iterator "$" ;
 	rml:referenceFormulation ql:JSONPath ;
