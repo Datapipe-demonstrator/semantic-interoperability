@@ -1,0 +1,191 @@
+prefixes:
+  dpp-battpass: http://dpp.example.org/batt-pass#
+  battPass: http://example.org/battpass#
+
+base: http://example.com/base#
+
+sources:
+  dpp-battpass:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$"
+  identification:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$[*].BatteryGeneralInformation"
+  sustainability:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$[*].BatteryCarbonFootprint"
+  sustainabilityCarbonFootprint:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.sustainability.carbonFootprint[*]"
+  sustainabilityDocuments:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.sustainability.documents[*]"
+  materials:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.materials"
+  materialsHazardous:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.materials.hazardous[*]"
+  materialsActive:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.materials.active[*]"
+  composition:
+    access: data.json
+    referenceFormulation: jsonpath
+    iterator: "$.composition[*]"
+
+mappings:
+  eventMapping:
+    source:
+        - dpp-battpass
+    subject: demoBattPass:$(identification.idDmc)
+    predicateobjects:
+      - [a, dpp-battpass:battpass]
+      - p: battpass:identification
+        o:
+        - mapping: identificationMapping
+      - p: battPass:metadata
+        o:
+        - mapping: metadataMapping
+      - p: battPass:commercial
+        o:
+        - mapping: commercialMapping
+      - p: battPass:characteristics
+        o: 
+        - mapping: characteristicsMapping
+      - p: battPass:sustainability
+        o:
+        - mapping: sustainabilityMapping
+      - p: battPass:materials
+        o:
+        - mapping: materialsMapping
+      - p: battPass:composition
+        o:
+        - mapping: compositionMapping
+  identificationMapping:
+    source:
+      - identification
+    subject: battPass:BattdemoBattPassIdentification
+    predicateobjects:
+      - [a, battPass:Identification]
+      - [battPass:category, $(category)]
+      - [battPass:idDmc, $(idDmc)]
+      - [battPass:chemistry, $(chemistry)]
+      - [battPass:manufacturerPartId, $(type.manufacturerPartId)]
+      - [battPass:nameAtManufacturer, $(type.nameAtManufacturer)]
+      - [battPass:carrierType, $(dataCarrier.carrierType)]
+      - [battPass:carrierLayout, $(dataCarrier.carrierLayout)]
+  
+  sustainabilityMapping:
+    source:
+      - sustainability
+    subject: battPass:demoBattPassSustainability
+    predicateobjects:
+      - [a, battPass:Sustainability]
+      - [battPass:sustainabilityStatus, $(status)]
+      - p: battPass:sustainabilityCarbonFootprint
+        o: 
+          mapping: sustainabilityCarbonFootprintMapping
+      - p: battPass:sustainabilityDocuments
+        o: 
+          mapping: sustainabilityDocumentsMapping
+  
+  sustainabilityCarbonFootprintMapping:
+    source:
+      - sustainabilityCarbonFootprint
+    subject: battPass:demoBattPassSustainabilityCarbonFootprint
+    predicateobjects:
+      - [a, battPass:SustainabilityCarbonFootprint]
+      - [battPass:sustainabilityCarbonFootprintLifeCycle, $(lifecycle)]
+      - [battPass:sustainabilityCarbonFootprintUnit, $(unit)]
+      - [battPass:sustainabilityCarbonFootprintPerformanceClass, $(performanceClass)]
+      - [battPass:sustainabilityCarbonFootprintType, $(type)]
+      - [battPass:sustainabilityCarbonFootprintValue, $(value)]
+
+  sustainabilityDocumentsMapping:
+    source:
+      - sustainabilityDocuments
+    subject: battPass:demoBattPassSustainabilityDocument$(category)_$(header)
+    predicateobjects:
+      - [a, battPass:SustainabilityDocument]
+      - [battPass:sustainabilityDocumentCategory, $(category)]
+      - [battPass:sustainabilityDocumentName, $(header)]
+      - [battPass:sustainabilityDocumentContentType, $(contentType)]
+      - [battPass:sustainabilityDocumentContent, $(content)]
+
+  characteristicsMapping:
+    source:
+      - characteristics
+    subject: battPass:demoBattPassCharacteristics
+    predicateobjects:
+      - [a, battPass:Characteristics]
+      - [battPass:warrantyLifeValue, $(warranty.lifeValue)]
+      - [battPass:warrantyLifeUnit, $(warranty.lifeUnit)]
+      - [battPass:lengthValue, $(warranty.physicalDimension.length.value)]
+      - [battPass:lengthUnit, $(warranty.physicalDimension.length.unit)]
+      - [battPass:widthValue, $(warranty.physicalDimension.width.value)]
+      - [battPass:widthUnit, $(warranty.physicalDimension.width.unit)]
+      - [battPass:weightalue, $(warranty.physicalDimension.weight.value)]
+      - [battPass:weightUnit, $(warranty.physicalDimension.weight.unit)]
+      - [battPass:heightValue, $(warranty.physicalDimension.height.value)]
+      - [battPass:heightUnit, $(warranty.physicalDimension.height.unit)]
+  
+  materialsMapping:
+    source:
+      - materials
+    subject: battPass:demoBattPassMaterials
+    predicateobjects:
+      - [a, battPass:Materials]
+      - p: battPass:materialsHazardous
+        o:
+        - mapping: materialsHazardousMapping
+      - p: battPass:materialsActive
+        o:
+        - mapping: materialsActiveMapping
+  
+  materialsHazardousMapping:
+    source:
+      - materialsHazardous
+    subject: battPass:demoBattPassMaterialsHazardous
+    predicateobjects:
+      - [a, battPass:HazardousMaterial]
+      - [battPass:materialName, $(name)]
+      - [battPass:materialConcentration, $(concentration)]
+      - [battPass:materialRecycled, $(recycled)]
+      - [battPass:materialLocation, $(location)]
+      - [battPass:materialCritical, $(critical)]
+      - [battPass:materialUnit, $(materialUnit)]
+
+  materialsActiveMapping:
+    source:
+      - materialsActive
+    subject: battPass:demoBattPassMaterialsActive
+    predicateobjects:
+      - [a, battPass:ActiveMaterial]
+      - [battPass:materialName, $(name)]
+      - [battPass:materialRecycled, $(recycled)]
+      - [battPass:materialLocation, $(location)]
+      - [battPass:materialCritical, $(critical)]
+
+  compositionMapping:
+    source:
+      - composition
+    subject: battPass:demoBattPassComposition
+    predicateobjects:
+      - [a, battPass:composition]
+      - [battPass:compositionRenewable, $(renewable)]
+      - [battPass:compositionConcentration, $(concentration)]
+      - [battPass:compositionRecycled, $(recycled)]
+      - [battPass:compositionLocation, $(location)]
+      - [battPass:compositionCritical, $(critical)]
+      - [battPass:compositionUnit, $(unit)]
+      
+  
