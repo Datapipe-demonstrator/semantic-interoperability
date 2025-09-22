@@ -26,7 +26,7 @@ map:map_metadataMapping_000 rml:logicalSource map:source_000 ;
 	rr:subjectMap map:s_001 .
 
 map:om_000 rdf:type rr:ObjectMap ;
-	rr:constant dpp-battpass:battpass_update ;
+	rr:constant battPass:BattPassUpdate ;
 	rr:termType rr:IRI .
 
 map:om_001 rml:reference "identification.idDmc" ;
@@ -53,8 +53,8 @@ map:om_006 rml:reference "metadata.predecessor" ;
 	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
-map:om_007 rdf:type rr:ObjectMap ;
-	rr:constant "$metadata.(status)" ;
+map:om_007 rml:reference "metadata.status" ;
+	rdf:type rr:ObjectMap ;
 	rr:termType rr:Literal .
 
 map:om_008 rdf:type rr:ObjectMap ;
@@ -200,7 +200,7 @@ map:pom_015 rdf:type rr:PredicateObjectMap ;
 	rr:predicateMap map:pm_015 .
 
 map:s_000 rdf:type rr:SubjectMap ;
-	rr:template "demoBattPass:{identification.idDmc}_{metadata.lastModification}" .
+	rr:template "http://dpp.example.org/batt-pass#{identification.idDmc}_{metadata.lastModification}" .
 
 map:s_001 rdf:type rr:SubjectMap ;
 	rr:template "http://example.org/battpass#demoBattPassMetadata_{identification.idDmc}_{metadata.lastModification}" .
