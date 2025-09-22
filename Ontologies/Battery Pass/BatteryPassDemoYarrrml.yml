@@ -62,10 +62,10 @@ mappings:
   eventMapping:
     source:
         - dpp-battpass
-    subject: demoBattPass:$(identification.idDmc)
+    subject: dpp-battPass:$(identification.idDmc)/$(metadata.lastModification)
     predicateobjects:
-      - [a, dpp-battpass:battpass]
-      - p: battpass:identification
+      - [a, battpass:Battpass]
+      - p: battPass:identification
         o:
         - mapping: identificationMapping
       - p: battPass:metadata
@@ -89,7 +89,7 @@ mappings:
   identificationMapping:
     source:
       - identification
-    subject: battPass:BattdemoBattPassIdentification
+    subject: battPass:$(idDmc)/BattdemoBattPassIdentification
     predicateobjects:
       - [a, battPass:Identification]
       - [battPass:category, $(category)]
@@ -102,7 +102,7 @@ mappings:
   metadataMapping:
     source:
       - metadata
-    subject: battPass:demoBattPassMetadata
+    subject: battPass:$(lastModification)/DemoBattPassMetadata
     predicateobjects:
       - [a, battPass:Metadata]
       - [battPass:expirationDate, $(expirationDate)]
@@ -141,7 +141,7 @@ mappings:
   sustainabilityCarbonFootprintMapping:
     source:
       - sustainabilityCarbonFootprint
-    subject: battPass:demoBattPassSustainabilityCarbonFootprint
+    subject: battPass:demoBattPassSustainabilityCarbonFootprint/$(type)
     predicateobjects:
       - [a, battPass:SustainabilityCarbonFootprint]
       - [battPass:sustainabilityCarbonFootprintLifeCycle, $(lifecycle)]
@@ -194,7 +194,7 @@ mappings:
   materialsHazardousMapping:
     source:
       - materialsHazardous
-    subject: battPass:demoBattPassMaterialsHazardous
+    subject: battPass:demoBattPassMaterialsHazardous/$(name)
     predicateobjects:
       - [a, battPass:HazardousMaterial]
       - [battPass:materialName, $(name)]
@@ -207,7 +207,7 @@ mappings:
   materialsActiveMapping:
     source:
       - materialsActive
-    subject: battPass:demoBattPassMaterialsActive
+    subject: battPass:demoBattPassMaterialsActive/$(name)
     predicateobjects:
       - [a, battPass:ActiveMaterial]
       - [battPass:materialName, $(name)]
@@ -218,7 +218,7 @@ mappings:
   compositionMapping:
     source:
       - composition
-    subject: battPass:demoBattPassComposition
+    subject: battPass:demoBattPassComposition/$(location)
     predicateobjects:
       - [a, battPass:composition]
       - [battPass:compositionRenewable, $(renewable)]
