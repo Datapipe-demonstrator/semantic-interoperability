@@ -8,10 +8,10 @@ python BatteryPassUnique.py
 
 ## Posting a new Battery Pass
 
-Call POST endpoint `https://demo-node1.k8s.basicdatasharinginfrastructure.net/api/events` with 
+Call POST endpoint `https://node1-event-api.datapipe.digital-passport.org/api/events` with 
 - Headers: 
-    1. Key:`Event-Type`, Value: `demo-final-battpass`
-    2. Key:`Event-Destinations`, Value: `O=Demo,L=Utrecht,C=NL` body (text/plain):
+    1. Key:`Event-Type`, Value: `Event-Type:devX-demo-batpas-static`
+    2. Key:`Event-Destinations`, Value: `Event-Destinations:did:web:node2.datapipe.digital-passport.org` body (text/plain):
 - Body: Unique [BatteryPass](./BatteryPassDemo.json) generated at previous step
 
 ## Query for metadata attributes filtered by pass identifier 
@@ -19,7 +19,7 @@ Edit the FILTER value for the pass identifier.
 
 If you want to run example queries without posting your own data, you can replace the ?passIdentifier value in the FILTER clause with "jzk4Z"
 
-Call POST endpoint `https://demo-node2.k8s.basicdatasharinginfrastructure.net/api/sparql` with body (text/plain):
+Call POST endpoint `https://node2-event-api.datapipe.digital-passport.org/api/sparql` with body (text/plain):
 
 ```
 select distinct ?passIdentifier ?lastModification ?status ?issueDate ?version ?economicOperatorId where { 
@@ -50,7 +50,7 @@ Call POST endpoint `https://demo-node1.k8s.basicdatasharinginfrastructure.net/ap
 ## Queries for self discharing rate and state of charge
 
 ### SoC, SoH, cell voltage, and cell temperature filtered by passport identifier
-If you want to run example queries without posting your own data, you can replace the ?passIdentifier value in the FILTER clause with the value of the metadata.passportIdentifier from the [Dynamic data](./updated-dynamicdata.json) JSON file.
+If you want to run example queries without posting your own data, you can replace the ?passIdentifier value in the FILTER clause with the value of the metadata.passportIdentifier from the [Dynamic data](./DynamicData.json) JSON file.
 
 Call POST endpoint `https://demo-node2.k8s.basicdatasharinginfrastructure.net/api/sparql` with body (text/plain):
 
@@ -81,7 +81,7 @@ LIMIT 100
 ```
 SELECT DISTINCT ?idDmc ?passIdentifier ?lastModification ?status ?SoC ?selfDischargingRate ?SoH ?cellVoltage ?cellTemperature
 WHERE {
-  ?s a <http://dpp.example.org/batt-pass#battpass_update> .
+  ?s a <http://example.org/battpass#BattPassUpdate> .
   ?s <http://example.org/battpass#idDmc> ?idDmc .
   ?s <http://example.org/battpass#metadata> ?metadata .
   ?metadata <http://example.org/battpass#passportIdentifier> ?passIdentifier.
@@ -94,20 +94,6 @@ WHERE {
   ?dynamicUpdate <http://example.org/battpass#cellVoltage> ?cellVoltage.
   ?dynamicUpdate <http://example.org/battpass#cellTemperature> ?cellTemperature.
   ?dynamicUpdate <http://example.org/battpass#selfDischargingRate> ?selfDischargingRate.
-
-  # Restrict to the latest modification timestamp
-  FILTER(?lastModification = ?latestModification)
-  
-  # Subquery to get the latest timestamp per passIdentifier / idDmc (in current example idDmc used)
-  {
-    SELECT ?idDmc (MAX(?lastModification) AS ?latestModification)
-    WHERE {
-      ?s <http://example.org/battpass#idDmc> ?idDmc.
-      ?s <http://example.org/battpass#metadata> ?metadata .
-      ?metadata <http://example.org/battpass#lastModification> ?lastModification.
-    }
-    GROUP BY ?idDmc
-  }
 }
 LIMIT 100
 

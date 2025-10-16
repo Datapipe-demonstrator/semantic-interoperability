@@ -24,9 +24,9 @@
     }
   },
   "metadata": {
-    "backupReference": "https://dummy.example.com",
-    "registrationIdentifier": "https://dummy.example.comlink/ID47110815",
-    "economicOperatorId": "Example Corporation",
+    "backupReference": "https://dummy.kia.com",
+    "registrationIdentifier": "https://dummy.kia.comlink/ID47110815",
+    "economicOperatorId": "KIA Corporation",
     "lastModification": "2000-01-01",
     "predecessor": "urn:uuid:00000000-0000-0000-0000-000000000000",
     "issueDate": "2000-01-01",
@@ -94,14 +94,14 @@
         {
           "contentType": "URL",
           "header": "Example Document XYZ",
-          "content": "https://dummy.example.com"
+          "content": "https://dummy.kia.com"
         }
       ],
       "testReport": [
         {
           "contentType": "URL",
           "header": "Example Document XYZ",
-          "content": "https://dummy.example.com"
+          "content": "https://dummy.kia.com"
         }
       ],
       "temperature": {
@@ -152,126 +152,8 @@
         "value": 4711,
         "thresholdExhaustion": 81.5
       }
-    },
-    "dynamic": {
-      "selfDischargingRate": 0.25,
-      "roundTripEfficiency": {
-        "remaining": {
-          "value": 50,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "fade": {
-          "value": 50,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        }
-      },
-      "operatingEnvironment": [
-        {
-          "contentType": "URL",
-          "header": "Example Document XYZ",
-          "content": "https://dummy.link"
-        }
-      ],
-      "stateOfCharge": {
-        "value": 100,
-        "time": "2025-01-01T11:11:11.111+01:00"
-      },
-      "performanceDocument": [
-        {
-          "contentType": "URL",
-          "header": "Example Document XYZ",
-          "content": "https://dummy.link"
-        }
-      ],
-      "fullCycles": {
-        "value": "1",
-        "time": "2023-12-07T10:39:13.576+01:00"
-      },
-      "power": {
-        "remaining": {
-          "value": 40000,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "fade": {
-          "value": 50,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        }
-      },
-      "negativeEvents": [
-        {
-          "contentType": "URL",
-          "header": "Example Document XYZ",
-          "content": "https://dummy.link"
-        }
-      ],
-      "resistance": {
-        "increase": {
-          "cell": {
-            "value": 50,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          },
-          "pack": {
-            "value": 50,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          },
-          "module": {
-            "value": 50,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          }
-        },
-        "remaining": {
-          "cell": {
-            "value": 0.3,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          },
-          "pack": {
-            "value": 0.3,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          },
-          "module": {
-            "value": 0.3,
-            "time": "2023-12-07T10:39:13.576+01:00"
-          }
-        }
-      },
-      "capacity": {
-        "fade": {
-          "value": 50,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "throughput": {
-          "value": 4,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "capacity": {
-          "value": 4,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        }
-      },
-      "energy": {
-        "remaining": {
-          "value": 0.5,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "soce": {
-          "value": 50,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        },
-        "throughput": {
-          "value": 0.5,
-          "time": "2023-12-07T10:39:13.576+01:00"
-        }
-      }
     }
   },
-  "sources": [
-    {
-      "header": "Example Document XYZ",
-      "category": "Product Specifications",
-      "type": "URL",
-      "content": "https://dummy.link"
-    }
-  ],
   "materials": {
     "hazardous": [
       {
@@ -463,171 +345,5 @@
         ]
       }
     ]
-  },
-  "safety": {
-    "usableExtinguishAgent": [
-      {
-        "fireClass": "B",
-        "document": [
-          {
-            "contentType": "URL",
-            "header": "Example Document XYZ",
-            "content": "https://dummy.example.com"
-          }
-        ],
-        "media": "Dry Powder"
-      }
-    ],
-    "safeDischarging": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ],
-    "meaningOfLabels": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ],
-    "dismantling": [
-      {
-        "contentType": "URL",
-        "header": "IDIS",
-        "content": "https://www.idis2.com/"
-      }
-    ],
-    "removalFromAppliance": [
-      {
-        "contentType": "URL",
-        "header": "IDIS",
-        "content": " https://www.idis2.com/"
-      }
-    ],
-    "safetyMeasures": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ]
-  },
-  "handling": {
-    "applicable": true,
-    "content": {
-      "producer": [
-        {
-          "id": "BPNL0123456789ZZ"
-        }
-      ],
-      "sparePart": [
-        {
-          "manufacturerPartId": "123-0.740-3434-A",
-          "nameAtManufacturer": "Mirror left"
-        }
-      ]
-    }
-  },
-  "conformity": {
-    "declarationOfConformityId": " ID123456",
-    "thirdPartyAssurance": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ],
-    "resultOfTestReport": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ],
-    "declarationOfConformity": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ],
-    "dueDiligencePolicy": [
-      {
-        "contentType": "URL",
-        "header": "Example Document XYZ",
-        "content": "https://dummy.example.com"
-      }
-    ]
-  },
-  "operation": {
-    "intoServiceDate": "2025-01-01",
-    "manufacturer": {
-      "facility": [
-        {
-          "facility": "Address: Anna van Buerenplein 1, 2595 DA Den Haag, Netherlands"
-        }
-      ],
-      "manufacturingDate": "08.2024",
-      "manufacturer": "MTNO0XI0KZ00MzYB"
-    }
-  },
-  "sustainability": {
-    "documents": [
-      {
-        "category": "separateCollection",
-        "contentType": "URL",
-        "header": "SC-001",
-        "content": "https://www.idis2.com/"
-      },
-      {
-        "category": "sustainabilityReport",
-        "contentType": "URL",
-        "header": "SR-001",
-        "content": "https://www.idis2.com/"
-      },
-      {
-        "category": "euTaxonomyDisclosureStatement",
-        "contentType": "URL",
-        "header": "ETDS-001",
-        "content": "https://www.idis2.com/"
-      },
-      {
-        "category": "wastePrevention",
-        "contentType": "URL",
-        "header": "WP-001",
-        "content": "https://www.idis2.com/"
-      }
-    ],
-    "carbonFootprint": [
-      {
-        "lifecycle": "main product production",
-        "rulebook": [
-          {
-            "contentType": "URL",
-            "header": "Example Document XYZ",
-            "content": "https://dummy.example.com"
-          }
-        ],
-        "unit": "kg CO2 / kWh",
-        "performanceClass": "A",
-        "manufacturingPlant": [
-          {
-            "facility": "AVB"
-          }
-        ],
-        "type": "Climate Change Total",
-        "value": 0.00815,
-        "declaration": [
-          {
-            "contentType": "URL",
-            "header": "Example Document XYZ",
-            "content": "https://dummy.example.com"
-          }
-        ]
-      }
-    ],
-    "status": "original"
   }
 }
