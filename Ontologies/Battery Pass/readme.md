@@ -11,8 +11,9 @@ python BatteryPassUnique.py
 Call POST endpoint `https://node1-event-api.datapipe.digital-passport.org/api/events` with 
 - Headers: 
     1. Key:`Event-Type`, Value: `Event-Type:devX-demo-batpas-static`
-    2. Key:`Event-Destinations`, Value: `Event-Destinations:did:web:node2.datapipe.digital-passport.org` body (text/plain):
-- Body: Unique [BatteryPass](./BatteryPassDemo.json) generated at previous step
+    2. Key:`Event-Destinations`, Value: `Event-Destinations:did:web:node2.datapipe.digital-passport.org` 
+    3. Key `x-api-key`, Value: ask TNO for api key
+- Body (text/plain): Unique [BatteryPass](./BatteryPassDemo.json) generated at previous step
 
 ## Query for metadata attributes filtered by pass identifier 
 Edit the FILTER value for the pass identifier.
@@ -41,11 +42,12 @@ FILTER(?passIdentifier = "#INSERT YOUR IDENTIFIER HERE#")} limit 100
 
 Copy your unique identifier generated at step "Customize Battery Pass"
 
-Call POST endpoint `https://demo-node1.k8s.basicdatasharinginfrastructure.net/api/events` with 
+Call POST endpoint `https://node1-event-api.datapipe.digital-passport.org/api/events` with 
 - Headers: 
     1. Key:`Event-Type`, Value: `june-dynamic`
-    2. Key:`Event-Destinations`, Value: `O=Demo,L=Utrecht,C=NL` body (text/plain):
-- Body: [DynamicData](./updated-dynamicdata.json) with unique identifier
+    2. Key:`Event-Destinations`, Value: `O=Demo,L=Utrecht,C=NL` 
+    3. Key: `x-api-key`, Value: ask TNO for api key
+- Body (text/plain): [DynamicData](./updated-dynamicdata.json) with unique identifier
 
 ## Queries for self discharing rate and state of charge
 
