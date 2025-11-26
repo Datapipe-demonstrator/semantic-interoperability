@@ -80,7 +80,7 @@ map:map_sustainabilityMapping_000 rml:logicalSource map:source_006 ;
 	rr:subjectMap map:s_004 .
 
 map:om_000 rdf:type rr:ObjectMap ;
-	rr:constant <battpass:Battpass> ;
+	rr:constant battPass:Battpass ;
 	rr:termType rr:IRI .
 
 map:om_001 rdf:type rr:ObjectMap ;
@@ -1031,4 +1031,3 @@ map:source_012 rml:iterator "$.composition[*]" ;
 
 <http://mapping.example.com/rules_000> <http://rdfs.org/ns/void#exampleResource> map:map_characteristicsMapping_000, map:map_commercialMapping_000, map:map_compositionMapping_000, map:map_eventMapping_000, map:map_identificationMapping_000, map:map_materialsActiveMapping_000, map:map_materialsHazardousMapping_000, map:map_materialsMapping_000, map:map_metadataMapping_000, map:map_sustainabilityCarbonFootprintMapping_000, map:map_sustainabilityDocumentsMapping_000, map:map_sustainabilityMapping_000 ;
 	rdf:type <http://rdfs.org/ns/void#Dataset> .
-
