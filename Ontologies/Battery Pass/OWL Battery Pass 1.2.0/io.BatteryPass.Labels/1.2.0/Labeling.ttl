@@ -1,0 +1,90 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/Labeling#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/Labeling> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "Labeling" ;
+    prov:generatedAtTime "2026-01-29T09:01:40.981909"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.Labels/1.2.0/gen/Labeling.aas> .
+
+:declarationOfConformity a owl:DatatypeProperty ;
+    rdfs:label "declarationOfConformity" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Labels:1.2.0#Labeling/submodel> ;
+    rdfs:range xsd:anyURI .
+
+:labelingMeaning a owl:DatatypeProperty ;
+    rdfs:label "labelingMeaning" ;
+    rdfs:comment "Explanation of the meaning of all symbols and labels (including separate collection; cadmium and lead; and carbon footprint and carbon footprint performance class symbols; and symbols and labels printed on batteries or their accompanying documents but not accessible via the battery passport)."@en ;
+    rdfs:domain :Labeling_labels_labels ;
+    rdfs:range rdf:langString .
+
+:labelingSubject a owl:DatatypeProperty ;
+    rdfs:label "labelingSubject" ;
+    rdfs:domain :Labeling_labels_labels ;
+    rdfs:range xsd:string .
+
+:labelingSymbol a owl:DatatypeProperty ;
+    rdfs:label "labelingSymbol" ;
+    rdfs:domain :Labeling_labels_labels ;
+    rdfs:range xsd:anyURI .
+
+:labels a owl:ObjectProperty ;
+    rdfs:label "labels" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Labels:1.2.0#Labeling/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.Labels:1.2.0#Labels> .
+
+:labels1 a owl:ObjectProperty ;
+    rdfs:label "labels" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Labels:1.2.0#Labels> ;
+    rdfs:range :Labeling_labels_labels .
+
+:resultOfTestReport a owl:DatatypeProperty ;
+    rdfs:label "resultOfTestReport" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Labels:1.2.0#Labeling/submodel> ;
+    rdfs:range xsd:anyURI .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.Labels:1.2.0#Labels> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "labels" ;
+    rdfs:comment """'Separate collection' or 'WEEE label' indicating that a product should not be discarded as unsorted waste but must be sent to separate collection facilities for recovery and recycling. To be printed on the physical label and displayed via the battery passport, suggested to be translated also to text to ensure machine readability.
+
+DIN DKE Spec chapter reference: 
+
+6.2.2 Separate collection
+6.2.3 Material symbol for Cadmium and Lead
+6.2.4 Carbon Footprint perfromance class
+6.2.5 Extinguishing agent"""@en .
+
+<urn:samm:io.BatteryPass.Labels:1.2.0#Labeling/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "Labeling" ;
+    rdfs:comment """Data model for battery labels and conformity
+
+Copyright 2024 Circulor (for and on behalf of the Battery Pass Consortium). This work is li-censed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold com-mercially and is given appropriate attribution."""@en .
+
+:Labeling_labels_labels a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "labels" ;
+    rdfs:comment """'Separate collection' or 'WEEE label' indicating that a product should not be discarded as unsorted waste but must be sent to separate collection facilities for recovery and recycling. To be printed on the physical label and displayed via the battery passport, suggested to be translated also to text to ensure machine readability.
+
+DIN DKE Spec chapter reference: 
+
+6.2.2 Separate collection
+6.2.3 Material symbol for Cadmium and Lead
+6.2.4 Carbon Footprint perfromance class
+6.2.5 Extinguishing agent"""@en .
+

@@ -1,0 +1,642 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/PerformanceAndDurability#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/PerformanceAndDurability> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "PerformanceAndDurability" ;
+    prov:generatedAtTime "2026-01-29T09:01:40.015403"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.Performance/1.2.1/gen/PerformanceAndDurability.aas> .
+
+:atSoC a owl:DatatypeProperty ;
+    rdfs:label "atSoC" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_originalPowerCapability_originalPowerCapability ;
+    rdfs:range xsd:float .
+
+:atSoC1 a owl:DatatypeProperty ;
+    rdfs:label "atSoC" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingPowerCapability_remainingPowerCapabilityValue ;
+    rdfs:range xsd:float .
+
+:batteryComponent a owl:DatatypeProperty ;
+    rdfs:label "batteryComponent" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_initialInternalResistance_initialInternalResistance ;
+    rdfs:range xsd:string .
+
+:batteryComponent1 a owl:DatatypeProperty ;
+    rdfs:label "batteryComponent" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_internalResistanceIncrease_internalResistanceIncrease ;
+    rdfs:range xsd:string .
+
+:batteryCondition a owl:ObjectProperty ;
+    rdfs:label "batteryCondition" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#PerformanceAndDurability/submodel> ;
+    rdfs:range :PerformanceAndDurability_batteryCondition .
+
+:batteryTechicalProperties a owl:ObjectProperty ;
+    rdfs:label "batteryTechicalProperties" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#PerformanceAndDurability/submodel> ;
+    rdfs:range :PerformanceAndDurability_batteryTechicalProperties .
+
+:cRate a owl:DatatypeProperty ;
+    rdfs:label "cRate" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:cRateLifeCycleTest a owl:DatatypeProperty ;
+    rdfs:label "cRateLifeCycleTest" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:capacityFade a owl:ObjectProperty ;
+    rdfs:label "capacityFade" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_capacityFade .
+
+:capacityFadeValue a owl:DatatypeProperty ;
+    rdfs:label "capacityFadeValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_capacityFade ;
+    rdfs:range xsd:float .
+
+:capacityThresholdForExhaustion a owl:DatatypeProperty ;
+    rdfs:label "capacityThresholdForExhaustion" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:double .
+
+:capacityThroughput a owl:ObjectProperty ;
+    rdfs:label "capacityThroughput" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_capacityThroughput .
+
+:capacityThroughputValue a owl:DatatypeProperty ;
+    rdfs:label "capacityThroughputValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_capacityThroughput ;
+    rdfs:range xsd:float .
+
+:currentSelfDischargingRate a owl:ObjectProperty ;
+    rdfs:label "currentSelfDischargingRate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_currentSelfDischargingRate .
+
+:currentSelfDischargingRateValue a owl:DatatypeProperty ;
+    rdfs:label "currentSelfDischargingRateValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_currentSelfDischargingRate ;
+    rdfs:range xsd:float .
+
+:energyThroughput a owl:ObjectProperty ;
+    rdfs:label "energyThroughput" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_energyThroughput .
+
+:energyThroughputValue a owl:DatatypeProperty ;
+    rdfs:label "energyThroughputValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_energyThroughput ;
+    rdfs:range xsd:float .
+
+:evolutionOfSelfDischarge a owl:ObjectProperty ;
+    rdfs:label "evolutionOfSelfDischarge" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_evolutionOfSelfDischarge .
+
+:evolutionOfSelfDischargeValue a owl:DatatypeProperty ;
+    rdfs:label "evolutionOfSelfDischargeValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_evolutionOfSelfDischarge ;
+    rdfs:range xsd:float .
+
+:expectedLifetime a owl:DatatypeProperty ;
+    rdfs:label "expectedLifetime" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:short .
+
+:expectedNumberOfCycles a owl:DatatypeProperty ;
+    rdfs:label "ExpectedNumberOfCycles"@en ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:long .
+
+:initialInternalResistance a owl:ObjectProperty ;
+    rdfs:label "initialInternalResistance" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range <urn:samm:io.BatteryPass.Performance:1.2.1#InitialInternalResistance> .
+
+:initialInternalResistance1 a owl:ObjectProperty ;
+    rdfs:label "initialInternalResistance" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#InitialInternalResistance> ;
+    rdfs:range :PerformanceAndDurability_batteryTechicalProperties_initialInternalResistance_initialInternalResistance .
+
+:initialSelfDischarge a owl:DatatypeProperty ;
+    rdfs:label "initialSelfDischarge" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:double .
+
+:internalResistanceIncrease a owl:ObjectProperty ;
+    rdfs:label "internalResistanceIncrease" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range <urn:samm:io.BatteryPass.Performance:1.2.1#CurrentInternalResistanceValue> .
+
+:internalResistanceIncrease1 a owl:ObjectProperty ;
+    rdfs:label "internalResistanceIncrease" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#CurrentInternalResistanceValue> ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_internalResistanceIncrease_internalResistanceIncrease .
+
+:internalResistanceIncreaseValue a owl:DatatypeProperty ;
+    rdfs:label "internalResistanceIncreaseValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_internalResistanceIncrease_internalResistanceIncrease ;
+    rdfs:range xsd:float .
+
+:lastUpdate a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_energyThroughput ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate1 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_capacityThroughput ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate10 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_evolutionOfSelfDischarge ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate11 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_currentSelfDischargingRate ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate12 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_internalResistanceIncrease_internalResistanceIncrease ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate13 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingRoundTripEnergyEfficiency ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate14 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_stateOfCharge ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate2 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_numberOfFullCycles ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate3 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_stateOfCertifiedEnergy ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate4 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_capacityFade ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate5 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingEnergy ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate6 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingCapacity ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate7 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_negativeEvents_negativeEvents ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate8 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_temperatureInformation ;
+    rdfs:range xsd:dateTime .
+
+:lastUpdate9 a owl:DatatypeProperty ;
+    rdfs:label "lastUpdate" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingPowerCapability ;
+    rdfs:range xsd:dateTime .
+
+:lifetimeReferenceTest a owl:DatatypeProperty ;
+    rdfs:label "lifetimeReferenceTest" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:anyURI .
+
+:maximum a owl:DatatypeProperty ;
+    rdfs:label "maximum" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_temperatureRangeIdleState ;
+    rdfs:range xsd:double .
+
+:maximumVoltage a owl:DatatypeProperty ;
+    rdfs:label "maximumVoltage" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:minimum a owl:DatatypeProperty ;
+    rdfs:label "minimum" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_temperatureRangeIdleState ;
+    rdfs:range xsd:double .
+
+:minimumVoltage a owl:DatatypeProperty ;
+    rdfs:label "minimumVoltage" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:negativeEvent a owl:DatatypeProperty ;
+    rdfs:label "Negative events, such as accidents. No further definition provided by regulation."@en ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_negativeEvents_negativeEvents ;
+    rdfs:range xsd:string .
+
+:negativeEvents a owl:ObjectProperty ;
+    rdfs:label "negativeEvents" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range <urn:samm:io.BatteryPass.Performance:1.2.1#NegativeEvents> .
+
+:negativeEvents1 a owl:ObjectProperty ;
+    rdfs:label "negativeEvents" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#NegativeEvents> ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_negativeEvents_negativeEvents .
+
+:nominalVoltage a owl:DatatypeProperty ;
+    rdfs:label "nominalVoltage" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:numberOfFullCycles a owl:ObjectProperty ;
+    rdfs:label "numberOfFullCycles" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_numberOfFullCycles .
+
+:numberOfFullCyclesValue a owl:DatatypeProperty ;
+    rdfs:label "numberOfFullCyclesValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_numberOfFullCycles ;
+    rdfs:range xsd:integer .
+
+:ohmicResistance a owl:DatatypeProperty ;
+    rdfs:label "ohmicResistance" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_initialInternalResistance_initialInternalResistance ;
+    rdfs:range xsd:double .
+
+:originalPowerCapability a owl:ObjectProperty ;
+    rdfs:label "originalPowerCapability" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range <urn:samm:io.BatteryPass.Performance:1.2.1#OriginalPowerCapabilityAtSoC> .
+
+:originalPowerCapability1 a owl:ObjectProperty ;
+    rdfs:label "originalPowerCapability" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Performance:1.2.1#OriginalPowerCapabilityAtSoC> ;
+    rdfs:range :PerformanceAndDurability_batteryTechicalProperties_originalPowerCapability_originalPowerCapability .
+
+:powerCapabilityAt a owl:DatatypeProperty ;
+    rdfs:label "powerCapabilityAt" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties_originalPowerCapability_originalPowerCapability ;
+    rdfs:range xsd:float .
+
+:powerCapabilityAt1 a owl:DatatypeProperty ;
+    rdfs:label "powerCapabilityAt" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingPowerCapability_remainingPowerCapabilityValue ;
+    rdfs:range xsd:float .
+
+:powerCapabilityRatio a owl:DatatypeProperty ;
+    rdfs:label "PowerCapabilityRatio"@en ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:powerFade a owl:DatatypeProperty ;
+    rdfs:label "powerFade" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:rPCLastUpdated a owl:DatatypeProperty ;
+    rdfs:label "rPCLastUpdated" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingPowerCapability_remainingPowerCapabilityValue ;
+    rdfs:range xsd:dateTime .
+
+:ratedCapacity a owl:DatatypeProperty ;
+    rdfs:label "ratedCapacity" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:ratedEnergy a owl:DatatypeProperty ;
+    rdfs:label "ratedEnergy" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:ratedMaximumPower a owl:DatatypeProperty ;
+    rdfs:label "ratedMaximumPower" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:double .
+
+:remainingCapacity a owl:ObjectProperty ;
+    rdfs:label "remainingCapacity" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_remainingCapacity .
+
+:remainingCapacityValue a owl:DatatypeProperty ;
+    rdfs:label "remainingCapacityValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingCapacity ;
+    rdfs:range xsd:float .
+
+:remainingEnergy a owl:ObjectProperty ;
+    rdfs:label "remainingEnergy" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_remainingEnergy .
+
+:remainingEnergyValue a owl:DatatypeProperty ;
+    rdfs:label "remainingEnergyValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingEnergy ;
+    rdfs:range xsd:float .
+
+:remainingPowerCapability a owl:ObjectProperty ;
+    rdfs:label "remainingPowerCapability" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_remainingPowerCapability .
+
+:remainingPowerCapabilityValue a owl:ObjectProperty ;
+    rdfs:label "remainingPowerCapabilityValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingPowerCapability ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_remainingPowerCapability_remainingPowerCapabilityValue .
+
+:remainingRoundTripEnergyEfficiency a owl:ObjectProperty ;
+    rdfs:label "remainingRoundTripEnergyEfficiency" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_remainingRoundTripEnergyEfficiency .
+
+:remainingRoundTripEnergyEfficiencyValue a owl:DatatypeProperty ;
+    rdfs:label "remainingRoundTripEnergyEfficiencyValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_remainingRoundTripEnergyEfficiency ;
+    rdfs:range xsd:float .
+
+:roundTripEfficiencyFade a owl:DatatypeProperty ;
+    rdfs:label "roundTripEfficiencyFade" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:roundTripEfficiencyat50PerCentCycleLife a owl:DatatypeProperty ;
+    rdfs:label "roundTripEfficiencyat50PerCentCycleLife" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:roundtripEfficiency a owl:DatatypeProperty ;
+    rdfs:label "roundtripEfficiency" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range xsd:float .
+
+:stateOfCertifiedEnergy a owl:ObjectProperty ;
+    rdfs:label "stateOfCertifiedEnergy" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_stateOfCertifiedEnergy .
+
+:stateOfCertifiedEnergyValue a owl:DatatypeProperty ;
+    rdfs:label "stateOfCertifiedEnergyValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_stateOfCertifiedEnergy ;
+    rdfs:range xsd:float .
+
+:stateOfCharge a owl:ObjectProperty ;
+    rdfs:label "stateOfCharge" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_stateOfCharge .
+
+:stateOfChargeValue a owl:DatatypeProperty ;
+    rdfs:label "stateOfChargeValue" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_stateOfCharge ;
+    rdfs:range xsd:float .
+
+:temperatureInformation a owl:ObjectProperty ;
+    rdfs:label "temperatureInformation" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition ;
+    rdfs:range :PerformanceAndDurability_batteryCondition_temperatureInformation .
+
+:temperatureRangeIdleState a owl:ObjectProperty ;
+    rdfs:label "temperatureRangeIdleState" ;
+    rdfs:domain :PerformanceAndDurability_batteryTechicalProperties ;
+    rdfs:range :PerformanceAndDurability_batteryTechicalProperties_temperatureRangeIdleState .
+
+:timeExtremeHighTemp a owl:DatatypeProperty ;
+    rdfs:label "timeExtremeHighTemp" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_temperatureInformation ;
+    rdfs:range xsd:double .
+
+:timeExtremeHighTempCharging a owl:DatatypeProperty ;
+    rdfs:label "timeExtremeHighTempCharging" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_temperatureInformation ;
+    rdfs:range xsd:double .
+
+:timeExtremeLowTemp a owl:DatatypeProperty ;
+    rdfs:label "timeExtremeLowTemp" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_temperatureInformation ;
+    rdfs:range xsd:double .
+
+:timeExtremeLowTempCharging a owl:DatatypeProperty ;
+    rdfs:label "timeExtremeLowTempCharging" ;
+    rdfs:domain :PerformanceAndDurability_batteryCondition_temperatureInformation ;
+    rdfs:range xsd:double .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.Performance:1.2.1#CurrentInternalResistanceValue> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "internalResistanceIncrease" ;
+    rdfs:comment """The internal resistance increase over time and upon usage should be defined based on the ratio of current and initial values as follows:
+Rincrease(x) = (R(x)  - RBOL) / RBOL ? 100 %
+where
+x 	is the aging parameter (e.g. storage time, number of cycles, etc.;);
+R(x)	is the internal resistance at the aging parameter x; and
+RBOL	is the internal resistance at begin of life.
+
+The battery passport can include additional information about the internal resistance increase on battery cell and battery module level, if available. It should be defined and calculated analogously to the requirements on battery pack level above.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.3"""@en .
+
+<urn:samm:io.BatteryPass.Performance:1.2.1#InitialInternalResistance> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "initialInternalResistance" ;
+    rdfs:comment """The battery passport can include additional information about the initial internal resistance on battery module level, if available. It should be defined and calculated analogously as the requirements on battery pack level above.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.2"""@en .
+
+<urn:samm:io.BatteryPass.Performance:1.2.1#NegativeEvents> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "negativeEvents" .
+
+<urn:samm:io.BatteryPass.Performance:1.2.1#OriginalPowerCapabilityAtSoC> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "originalPowerCapability" ;
+    rdfs:comment """Pre-use power capability: Definition of power capability as given in Battery Regulation. 
+Annex IV Part B, point 4 --> measurement at 80 % and 20 % SoC required. This requirement may not be implementable for remaining power capability and power fade(see below). It, thus, should be reviewed together with SoC definition.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.2
+
+"""@en .
+
+<urn:samm:io.BatteryPass.Performance:1.2.1#PerformanceAndDurability/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "PerformanceAndDurability" ;
+    rdfs:comment """Battery performance and durability data model
+
+Copyright ? 2024 Circulor (for and on behalf of the Battery Pass Consortium). This work is li-censed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold com-mercially and is given appropriate attribution."""@en .
+
+:PerformanceAndDurability_batteryCondition_capacityFade a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "capacityFade" ;
+    rdfs:comment """The capacity fade is the ?Decrease over time and upon usage in the amount of charge that a battery can deliver at the rated voltage, with respect to the original rated capacity? (see BattReg Annex IV (2)) as declared by the manufacturer.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.4"""@en .
+
+:PerformanceAndDurability_batteryCondition_capacityThroughput a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "capacityThroughput" ;
+    rdfs:comment """The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.8"""@en .
+
+:PerformanceAndDurability_batteryCondition_currentSelfDischargingRate a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "currentSelfDischargingRate" ;
+    rdfs:comment """The current self-discharge rate is the change of the self-discharge rate in an idle state of the battery in reference conditions (temperature etc.) at aging parameter x, e.g. after a certain amount of storage time or, number of cycles.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.7"""@en .
+
+:PerformanceAndDurability_batteryCondition_energyThroughput a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "energyThroughput" ;
+    rdfs:comment """The data attribute should be reported as measured for further potential processing. In addition, the normalisation by capacity may add a further useful value that ensures comparability among battery sizes.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.7"""@en .
+
+:PerformanceAndDurability_batteryCondition_evolutionOfSelfDischarge a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "evolutionOfSelfDischarge" ;
+    rdfs:comment """?Evolution of self-discharge rates? is the change of self-discharge over time and usage, as percentage calculated from the initial and current self-discharge rate.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.8"""@en .
+
+:PerformanceAndDurability_batteryCondition_negativeEvents_negativeEvents a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "negativeEvents" .
+
+:PerformanceAndDurability_batteryCondition_numberOfFullCycles a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "numberOfFullCycles" ;
+    rdfs:comment """Number of (full) charging and discharging cycles.
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.3"""@en .
+
+:PerformanceAndDurability_batteryCondition_remainingCapacity a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "remainingCapacity" ;
+    rdfs:comment """The in-use data attribute on capacity, corresponding with the definition of rated capacity.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.3"""@en .
+
+:PerformanceAndDurability_batteryCondition_remainingEnergy a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "remainingEnergy" ;
+    rdfs:comment """Definition from UNECE GTR 22, applicable only to EVs.
+The energy supplied by the battery from the beginning of the test procedure used for certification until the applicable break-off criterion of the test procedure used for certification is reached.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.6"""@en .
+
+:PerformanceAndDurability_batteryCondition_remainingPowerCapability a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "remainingPowerCapability" ;
+    rdfs:comment """'- Original power capability (in Watts) and limits, with temperature range when relevant.
+- The amount of energy that a battery is capable to provide over a given period of time under reference conditions.
+- Power capability at 80% and 20% state of charge.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.3"""@en .
+
+:PerformanceAndDurability_batteryCondition_remainingRoundTripEnergyEfficiency a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "remainingRoundTripEnergyEfficiency" ;
+    rdfs:comment """The battery passport shall include information, where possible, about the remaining round trip energy efficiency as information on the state of health of the battery 
+
+The update frequency of remaining round trip energy efficiency should be aligned with the update frequency of round trip energy efficiency fade and should be provided upon change of the battery status.
+
+DIN DKE Spec 99100 chapter reference: 6.7.4.4"""@en .
+
+:PerformanceAndDurability_batteryCondition_stateOfCertifiedEnergy a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "SOCE"@en ;
+    rdfs:comment """Definition based on UNECE GTR 22: The measured or on-board UBE performance at a specific point in its lifetime, expressed as a percentage of the certified usable battery energy.
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.7"""@en .
+
+:PerformanceAndDurability_batteryCondition_stateOfCharge a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "SoC"@en ;
+    rdfs:comment """The Battery Pass consortium proposes to change the definition to: "available capacity in a battery expressed as a percentage of remaining capacity" to reflect use of SoC in practice.  
+
+DIN DKE Spec 99100 chapter reference: 6.7.2.8"""@en .
+
+:PerformanceAndDurability_batteryTechicalProperties_initialInternalResistance_initialInternalResistance a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "initialInternalResistance" ;
+    rdfs:comment """The battery passport can include additional information about the initial internal resistance on battery module level, if available. It should be defined and calculated analogously as the requirements on battery pack level above.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.2"""@en .
+
+:PerformanceAndDurability_batteryTechicalProperties_originalPowerCapability_originalPowerCapability a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "originalPowerCapability" ;
+    rdfs:comment """Pre-use power capability: Definition of power capability as given in Battery Regulation. 
+Annex IV Part B, point 4 --> measurement at 80 % and 20 % SoC required. This requirement may not be implementable for remaining power capability and power fade(see below). It, thus, should be reviewed together with SoC definition.
+
+DIN DKE Spec 99100 chapter reference: 6.7.3.2
+
+"""@en .
+
+:PerformanceAndDurability_batteryTechicalProperties_temperatureRangeIdleState a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "temperatureRangeIdleState" ;
+    rdfs:comment """Upper an lower boundary of the surrounding temperature range, which the battery can safely withstand. 
+
+DIN DKE Spec 99100 chapter reference: 6.7.6.3-4"""@en .
+
+:PerformanceAndDurability_batteryCondition_internalResistanceIncrease_internalResistanceIncrease a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "internalResistanceIncrease" ;
+    rdfs:comment """The internal resistance increase over time and upon usage should be defined based on the ratio of current and initial values as follows:
+Rincrease(x) = (R(x)  - RBOL) / RBOL ? 100 %
+where
+x 	is the aging parameter (e.g. storage time, number of cycles, etc.;);
+R(x)	is the internal resistance at the aging parameter x; and
+RBOL	is the internal resistance at begin of life.
+
+The battery passport can include additional information about the internal resistance increase on battery cell and battery module level, if available. It should be defined and calculated analogously to the requirements on battery pack level above.
+
+DIN DKE Spec 99100 chapter reference: 6.7.5.3"""@en .
+
+:PerformanceAndDurability_batteryCondition_remainingPowerCapability_remainingPowerCapabilityValue a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "remainingPowerCapabilityValue" .
+
+:PerformanceAndDurability_batteryCondition_temperatureInformation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "temperatureInformation" ;
+    rdfs:comment """The battery passport must include periodically recorded information on the operating environmental conditions, including temperature.
+
+DIN DKE Spec 99100 chapter reference: 6.7.7.5 - 8"""@en .
+
+:PerformanceAndDurability_batteryCondition a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "batteryCondition" ;
+    rdfs:comment """'- Expected battery lifetime expressed in cycles, and reference test used.
+- Their expected life-time under the reference conditions for which they have been designed in terms of cycles, except for non-cycle applications, and calendar years."""@en .
+
+:PerformanceAndDurability_batteryTechicalProperties a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "batteryTechicalProperties" ;
+    rdfs:comment "This property covers all perfromance related properties"@en .
+

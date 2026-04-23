@@ -1,0 +1,187 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/GeneralProductInformation#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/GeneralProductInformation> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "GeneralProductInformation" ;
+    prov:generatedAtTime "2026-01-29T09:01:39.467824"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.GeneralProductInformation/1.2.0/gen/GeneralProductInformation.aas> .
+
+:addressCountry a owl:DatatypeProperty ;
+    rdfs:label "addressCountry" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:addressCountry1 a owl:DatatypeProperty ;
+    rdfs:label "addressCountry" ;
+    rdfs:domain :GeneralProductInformation_manufacturingPlace ;
+    rdfs:range xsd:string .
+
+:addressCountry2 a owl:DatatypeProperty ;
+    rdfs:label "addressCountry" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:batteryCategory a owl:DatatypeProperty ;
+    rdfs:label "BatteryCategory"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:string .
+
+:batteryMass a owl:DatatypeProperty ;
+    rdfs:label "batteryMass" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:float .
+
+:batteryPassportIdentifier a owl:DatatypeProperty ;
+    rdfs:label "BatteryPassportIdentifier"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:string .
+
+:batteryStatus a owl:DatatypeProperty ;
+    rdfs:label "BatteryStatus"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:string .
+
+:contactName a owl:DatatypeProperty ;
+    rdfs:label "contactName" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation ;
+    rdfs:range xsd:string .
+
+:contactName1 a owl:DatatypeProperty ;
+    rdfs:label "contactName" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation ;
+    rdfs:range xsd:string .
+
+:identifier a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation ;
+    rdfs:range xsd:string .
+
+:identifier1 a owl:DatatypeProperty ;
+    rdfs:label "identifier" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation ;
+    rdfs:range xsd:string .
+
+:manufacturerInformation a owl:ObjectProperty ;
+    rdfs:label "manufacturerInformation" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range :GeneralProductInformation_manufacturerInformation .
+
+:manufacturingDate a owl:DatatypeProperty ;
+    rdfs:label "manufacturingDate" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:dateTime .
+
+:manufacturingPlace a owl:ObjectProperty ;
+    rdfs:label "manufacturingPlace" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range :GeneralProductInformation_manufacturingPlace .
+
+:operatorInformation a owl:ObjectProperty ;
+    rdfs:label "operatorInformation" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range :GeneralProductInformation_operatorInformation .
+
+:postalAddress a owl:ObjectProperty ;
+    rdfs:label "postalAddress" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation ;
+    rdfs:range :GeneralProductInformation_manufacturerInformation_postalAddress .
+
+:postalAddress1 a owl:ObjectProperty ;
+    rdfs:label "postalAddress" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation ;
+    rdfs:range :GeneralProductInformation_operatorInformation_postalAddress .
+
+:postalCode a owl:DatatypeProperty ;
+    rdfs:label "postalCode" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:postalCode1 a owl:DatatypeProperty ;
+    rdfs:label "postalCode" ;
+    rdfs:domain :GeneralProductInformation_manufacturingPlace ;
+    rdfs:range xsd:string .
+
+:postalCode2 a owl:DatatypeProperty ;
+    rdfs:label "postalCode" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:productIdentifier a owl:DatatypeProperty ;
+    rdfs:label "ProductIdentifier"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:string .
+
+:puttingIntoService a owl:DatatypeProperty ;
+    rdfs:label "puttingIntoService" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:dateTime .
+
+:streetAddress a owl:DatatypeProperty ;
+    rdfs:label "streetAddress" ;
+    rdfs:domain :GeneralProductInformation_manufacturerInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:streetAddress1 a owl:DatatypeProperty ;
+    rdfs:label "streetAddress" ;
+    rdfs:domain :GeneralProductInformation_manufacturingPlace ;
+    rdfs:range xsd:string .
+
+:streetAddress2 a owl:DatatypeProperty ;
+    rdfs:label "streetAddress" ;
+    rdfs:domain :GeneralProductInformation_operatorInformation_postalAddress ;
+    rdfs:range xsd:string .
+
+:warrentyPeriod a owl:DatatypeProperty ;
+    rdfs:label "warrentyPeriod" ;
+    rdfs:domain <urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> ;
+    rdfs:range xsd:gMonth .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+:GeneralProductInformation_manufacturerInformation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "ManufacturerIdentification"@en ;
+    rdfs:comment """Unambiguous identification of the manufacturer of the battery, suggested via a unique operator identifier (as "unique string of characters for the identification of actors involved in the value chain of products", ESPR Art. 2(32)). 
+
+DIN DKE Spec chapter reference: 6.1.2.4"""@en .
+
+:GeneralProductInformation_manufacturerInformation_postalAddress a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "postalAddress" .
+
+:GeneralProductInformation_manufacturingPlace a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "ManufacturingPlace"@en ;
+    rdfs:comment """Unambiguous identification of the manufacturing facility (e.g. country, city, street, building (if needed)), suggested via a unique facility identifier (as "unique string of characters for the identification of locations or buildings involved in the value chain of a product or used by actors involved in the value chain of a product", ESPR Art. 2(33)).
+
+DIN DKE Spec chapter reference: 6.1.3.1"""@en .
+
+:GeneralProductInformation_operatorInformation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "OperatorInformation"@en ;
+    rdfs:comment """State the name, trade name or mark, postal address, web ad-dress, e-mail address. Suggested reporting via a unique operator identifier (see requirements of unique battery identifier).
+
+DIN DKE Spec chapter reference: 6.1.2.3"""@en .
+
+:GeneralProductInformation_operatorInformation_postalAddress a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "postalAddress" .
+
+<urn:samm:io.BatteryPass.GeneralProductInformation:1.0.0#GeneralProductInformation/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "GeneralProductInformation" ;
+    rdfs:comment """Mandatory data: Product identification; manufacturer?s identification; manufacturing place; manufacturing date; battery category; battery weight; battery status (Annex VI, Part A and Annex XIII)
+Copyright ? 2023 Circulor (for and on behalf of the Battery Pass Consortium). This work is li-censed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold com-mercially and is given appropriate attribution."""@en .
+

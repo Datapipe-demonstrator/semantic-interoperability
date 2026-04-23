@@ -1,0 +1,44 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/SupplyChainDueDiligence#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/SupplyChainDueDiligence> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "SupplyChainDueDiligence" ;
+    prov:generatedAtTime "2026-01-29T09:01:38.415575"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.SupplyChainDueDiligence/1.2.0/gen/SupplyChainDueDiligence.aas> .
+
+:supplyChainDueDiligenceReport a owl:DatatypeProperty ;
+    rdfs:label "supplyChainDueDiligenceReport" ;
+    rdfs:domain <urn:samm:io.BatteryPass.SupplyChainDueDiligence:1.2.0#SupplyChainDueDiligence/submodel> ;
+    rdfs:range xsd:anyURI .
+
+:supplyChainIndicies a owl:DatatypeProperty ;
+    rdfs:label "supplyChainIndicies" ;
+    rdfs:domain <urn:samm:io.BatteryPass.SupplyChainDueDiligence:1.2.0#SupplyChainDueDiligence/submodel> ;
+    rdfs:range xsd:float .
+
+:thirdPartyAussurances a owl:DatatypeProperty ;
+    rdfs:label "thirdPartyAussurances" ;
+    rdfs:domain <urn:samm:io.BatteryPass.SupplyChainDueDiligence:1.2.0#SupplyChainDueDiligence/submodel> ;
+    rdfs:range xsd:anyURI .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.SupplyChainDueDiligence:1.2.0#SupplyChainDueDiligence/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "SupplyChainDueDiligence" ;
+    rdfs:comment """Data model for Battery due diligence
+
+Copyright ? 2024 Circulor (for and on behalf of the Battery Pass Consortium). This work is li-censed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold com-mercially and is given appropriate attribution."""@en .
+

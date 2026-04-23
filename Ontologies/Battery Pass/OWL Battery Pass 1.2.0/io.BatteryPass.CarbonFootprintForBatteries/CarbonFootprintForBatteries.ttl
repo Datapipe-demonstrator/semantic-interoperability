@@ -1,0 +1,89 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/CarbonFootprintForBatteries#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/CarbonFootprintForBatteries> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "CarbonFootprintForBatteries" ;
+    prov:generatedAtTime "2026-01-29T09:01:41.943712"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.CarbonFootprint/1.2.0/gen/CarbonFootprintForBatteries.aas> .
+
+:absoluteCarbonFootprint a owl:DatatypeProperty ;
+    rdfs:label "absoluteCarbonFootprint" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> ;
+    rdfs:range xsd:double .
+
+:batteryCarbonFootprint a owl:DatatypeProperty ;
+    rdfs:label "batteryCarbonFootprint" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> ;
+    rdfs:range xsd:double .
+
+:carbonFootprint a owl:DatatypeProperty ;
+    rdfs:label "carbonFootprint" ;
+    rdfs:domain :CarbonFootprintForBatteries_carbonFootprintPerLifecycleStage_carbonFootprintPerLifecycleStage ;
+    rdfs:range xsd:double .
+
+:carbonFootprintPerLifecycleStage a owl:ObjectProperty ;
+    rdfs:label "carbonFootprintPerLifecycleStage" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprints> .
+
+:carbonFootprintPerLifecycleStage1 a owl:ObjectProperty ;
+    rdfs:label "carbonFootprintPerLifecycleStage" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprints> ;
+    rdfs:range :CarbonFootprintForBatteries_carbonFootprintPerLifecycleStage_carbonFootprintPerLifecycleStage .
+
+:carbonFootprintPerformanceClass a owl:DatatypeProperty ;
+    rdfs:label "carbonFootprintPerformanceClass" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> ;
+    rdfs:range xsd:string .
+
+:carbonFootprintStudy a owl:DatatypeProperty ;
+    rdfs:label "carbonFootprintStudy" ;
+    rdfs:domain <urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> ;
+    rdfs:range xsd:anyURI .
+
+:lifecycleStage a owl:DatatypeProperty ;
+    rdfs:label "lifecycleStage" ;
+    rdfs:domain :CarbonFootprintForBatteries_carbonFootprintPerLifecycleStage_carbonFootprintPerLifecycleStage ;
+    rdfs:range xsd:string .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprints> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "carbonFootprintPerLifecycleStage" ;
+    rdfs:comment """The carbon footprint of the battery as share of total Battery Carbon Footprint, differentiated per life cycle stages raw material extraction, battery production, distribution and recycling.
+
+DIN DKE Spec 99100 chapter reference: 
+6.3.3: Raw material extraction
+6.3.4: Main production
+6.3.5: Distrinution
+6.3.6: EoL/Recycling"""@en .
+
+:CarbonFootprintForBatteries_carbonFootprintPerLifecycleStage_carbonFootprintPerLifecycleStage a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "carbonFootprintPerLifecycleStage" ;
+    rdfs:comment """The carbon footprint of the battery as share of total Battery Carbon Footprint, differentiated per life cycle stages raw material extraction, battery production, distribution and recycling.
+
+DIN DKE Spec 99100 chapter reference: 
+6.3.3: Raw material extraction
+6.3.4: Main production
+6.3.5: Distrinution
+6.3.6: EoL/Recycling"""@en .
+
+<urn:samm:io.BatteryPass.CarbonFootprint:1.2.0#CarbonFootprintForBatteries/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "CarbonFootprintForBatteries" ;
+    rdfs:comment "The battery passport must contain carbon footprint per functional unit of the battery as declared in the battery carbon footprint declaration in accordance with the entry into force of the implementing acts on the format of declaration. Reference: REGULATION (EU) 2023/1542 aka EU Battery Regulation"@en .
+

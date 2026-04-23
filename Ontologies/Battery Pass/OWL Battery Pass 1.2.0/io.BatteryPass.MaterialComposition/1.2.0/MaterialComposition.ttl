@@ -1,0 +1,196 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/MaterialComposition#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/MaterialComposition> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "MaterialComposition" ;
+    prov:generatedAtTime "2026-01-29T09:01:41.464707"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.MaterialComposition/1.2.0/gen/MaterialComposition.aas> .
+
+:batteryChemistry a owl:ObjectProperty ;
+    rdfs:label "batteryChemistry" ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#MaterialComposition/submodel> ;
+    rdfs:range :MaterialComposition_batteryChemistry .
+
+:batteryMaterialIdentifier a owl:DatatypeProperty ;
+    rdfs:label "Identifier"@en ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials ;
+    rdfs:range xsd:string .
+
+:batteryMaterialLocation a owl:ObjectProperty ;
+    rdfs:label "batteryMaterialLocation" ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials ;
+    rdfs:range :MaterialComposition_batteryMaterials_batteryMaterials_batteryMaterialLocation .
+
+:batteryMaterialMass a owl:DatatypeProperty ;
+    rdfs:label "Weight"@en ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials ;
+    rdfs:range xsd:float .
+
+:batteryMaterialName a owl:DatatypeProperty ;
+    rdfs:label "Name"@en ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials ;
+    rdfs:range xsd:string .
+
+:batteryMaterials a owl:ObjectProperty ;
+    rdfs:label "batteryMaterials" ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#MaterialComposition/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#BatteryMaterialList> .
+
+:batteryMaterials1 a owl:ObjectProperty ;
+    rdfs:label "batteryMaterials" ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#BatteryMaterialList> ;
+    rdfs:range :MaterialComposition_batteryMaterials_batteryMaterials .
+
+:clearName a owl:DatatypeProperty ;
+    rdfs:label "clearName" ;
+    rdfs:domain :MaterialComposition_batteryChemistry ;
+    rdfs:range xsd:string .
+
+:componentId a owl:DatatypeProperty ;
+    rdfs:label "SubstanceId"@en ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials_batteryMaterialLocation ;
+    rdfs:range xsd:string .
+
+:componentId1 a owl:DatatypeProperty ;
+    rdfs:label "SubstanceId"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances_hazardousSubstanceLocation ;
+    rdfs:range xsd:string .
+
+:componentName a owl:DatatypeProperty ;
+    rdfs:label "Name"@en ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials_batteryMaterialLocation ;
+    rdfs:range xsd:string .
+
+:componentName1 a owl:DatatypeProperty ;
+    rdfs:label "Name"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances_hazardousSubstanceLocation ;
+    rdfs:range xsd:string .
+
+:hazardousSubstanceClass a owl:DatatypeProperty ;
+    rdfs:label "Class"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range xsd:string .
+
+:hazardousSubstanceConcentration a owl:DatatypeProperty ;
+    rdfs:label "Concentration"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range xsd:double .
+
+:hazardousSubstanceIdentifier a owl:DatatypeProperty ;
+    rdfs:label "Identifier"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range xsd:string .
+
+:hazardousSubstanceImpact a owl:ObjectProperty ;
+    rdfs:label "hazardousSubstanceImpact" ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#ImpactList> .
+
+:hazardousSubstanceImpact1 a owl:DatatypeProperty ;
+    rdfs:label "Impact"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#ImpactList> ;
+    rdfs:range xsd:string .
+
+:hazardousSubstanceLocation a owl:ObjectProperty ;
+    rdfs:label "hazardousSubstanceLocation" ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range :MaterialComposition_hazardousSubstances_hazardousSubstances_hazardousSubstanceLocation .
+
+:hazardousSubstanceName a owl:DatatypeProperty ;
+    rdfs:label "Name"@en ;
+    rdfs:domain :MaterialComposition_hazardousSubstances_hazardousSubstances ;
+    rdfs:range xsd:string .
+
+:hazardousSubstances a owl:ObjectProperty ;
+    rdfs:label "hazardousSubstances" ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#MaterialComposition/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#HazardousSubstancesList> .
+
+:hazardousSubstances1 a owl:ObjectProperty ;
+    rdfs:label "hazardousSubstances" ;
+    rdfs:domain <urn:samm:io.BatteryPass.MaterialComposition:1.2.0#HazardousSubstancesList> ;
+    rdfs:range :MaterialComposition_hazardousSubstances_hazardousSubstances .
+
+:isCriticalRawMaterial a owl:DatatypeProperty ;
+    rdfs:label "isCriticalRawMaterial" ;
+    rdfs:domain :MaterialComposition_batteryMaterials_batteryMaterials ;
+    rdfs:range xsd:boolean .
+
+:shortName a owl:DatatypeProperty ;
+    rdfs:label "shortName" ;
+    rdfs:domain :MaterialComposition_batteryChemistry ;
+    rdfs:range xsd:string .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.MaterialComposition:1.2.0#BatteryMaterialList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "BatteryMaterials"@en ;
+    rdfs:comment """"Component materials used" (No. 17.a-c): Naming the materials (as a composition of substances) in cathode, anode, electrolyte according to public standards, including specification of the corresponding component (i.e., cathode, anode, or electrolyte). We suggest a reporting threshold of 0.1 % weight by weight.
+
+DIN DKE Spec 99100 chapter reference: 6.5.3-6.5.4"""@en .
+
+<urn:samm:io.BatteryPass.MaterialComposition:1.2.0#HazardousSubstancesList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "HazardousSubstances"@en ;
+    rdfs:comment """"Hazardous substances" (No 20.a-e): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) all hazardous substance (as ?any substance that poses a threat to human health and the environment?). Suggested above 0.1 % weight by weight within each (sub-)component.
+
+DIN DKE Spec 99100 chapter reference: 6.5.4 - 6.5.6"""@en .
+
+<urn:samm:io.BatteryPass.MaterialComposition:1.2.0#ImpactList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "Impact"@en ;
+    rdfs:comment "Impact statements based on, e.g., REACH or GHS for all hazard classes applicable to substances in the battery."@en .
+
+:MaterialComposition_batteryChemistry a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "ProductChemistry"@en ;
+    rdfs:comment """Composition of a product in general terms by specifying the cathode and anode active material as well as electrolyte.
+
+DIN DKE Spec 99100 chapter reference: 6.5.2"""@en .
+
+:MaterialComposition_batteryMaterials_batteryMaterials_batteryMaterialLocation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "Battery component that relates to the material"@en .
+
+:MaterialComposition_hazardousSubstances_hazardousSubstances_hazardousSubstanceLocation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "Hazardous substances (No. 19-23): Location on a (sub-)component-level of all hazardous substances (as ?any substance that poses a threat to human health and the environment?). Suggested via a unique identifier or nomenclature."@en .
+
+<urn:samm:io.BatteryPass.MaterialComposition:1.2.0#MaterialComposition/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "MaterialComposition" ;
+    rdfs:comment """Mandatory data: Battery chemistry; critical raw materials; materials used in the cathode, anode, and 
+electrolyte; hazardous substances; impact of substances on the environment and on human health or 
+safety
+
+Copyright ? 2024 Circulor (for and on behalf of the Battery Pass Consortium). This work is li-censed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold com-mercially and is given appropriate attribution."""@en .
+
+:MaterialComposition_batteryMaterials_batteryMaterials a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "BatteryMaterials"@en ;
+    rdfs:comment """"Component materials used" (No. 17.a-c): Naming the materials (as a composition of substances) in cathode, anode, electrolyte according to public standards, including specification of the corresponding component (i.e., cathode, anode, or electrolyte). We suggest a reporting threshold of 0.1 % weight by weight.
+
+DIN DKE Spec 99100 chapter reference: 6.5.3-6.5.4"""@en .
+
+:MaterialComposition_hazardousSubstances_hazardousSubstances a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "HazardousSubstances"@en ;
+    rdfs:comment """"Hazardous substances" (No 20.a-e): Name (agreed substance nomenclature, e.g. IUPAC or chemical name) all hazardous substance (as ?any substance that poses a threat to human health and the environment?). Suggested above 0.1 % weight by weight within each (sub-)component.
+
+DIN DKE Spec 99100 chapter reference: 6.5.4 - 6.5.6"""@en .
+

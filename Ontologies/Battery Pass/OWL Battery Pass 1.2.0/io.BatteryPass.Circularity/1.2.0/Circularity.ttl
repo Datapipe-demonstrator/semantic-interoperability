@@ -1,0 +1,263 @@
+@prefix : <https://ontology.tno.nl/BatteryPass/Circularity#> .
+@prefix aas: <https://admin-shell.io/aas/3/1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ontology.tno.nl/BatteryPass/Circularity> a owl:Ontology,
+        prov:Entity ;
+    rdfs:label "Circularity" ;
+    prov:generatedAtTime "2026-01-29T09:01:40.504709"^^xsd:dateTime ;
+    prov:wasAttributedTo <https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> ;
+    prov:wasDerivedFrom <https://github.com/batterypass/BatteryPassDataModel/blob/8722af2d15c981c63552e50b9cd71a39b213b9fc/BatteryPass/io.BatteryPass.Circularity/1.2.0/gen/Circularity.aas> .
+
+:addressCountry a owl:DatatypeProperty ;
+    rdfs:label "addressCountry" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources_addressOfSupplier ;
+    rdfs:range xsd:string .
+
+:addressOfSupplier a owl:ObjectProperty ;
+    rdfs:label "addressOfSupplier" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources ;
+    rdfs:range :Circularity_sparePartSources_sparePartSources_addressOfSupplier .
+
+:components a owl:ObjectProperty ;
+    rdfs:label "components" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources ;
+    rdfs:range <urn:samm:io.BatteryPass.Circularity:1.2.0#ComponentList> .
+
+:components1 a owl:ObjectProperty ;
+    rdfs:label "components" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#ComponentList> ;
+    rdfs:range :Circularity_sparePartSources_sparePartSources_components_components .
+
+:dismantlingAndRemovalInformation a owl:ObjectProperty ;
+    rdfs:label "dismantlingAndRemovalInformation" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.Circularity:1.2.0#DocumentationList> .
+
+:dismantlingAndRemovalInformation1 a owl:ObjectProperty ;
+    rdfs:label "dismantlingAndRemovalInformation" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#DocumentationList> ;
+    rdfs:range :Circularity_dismantlingAndRemovalInformation_dismantlingAndRemovalInformation .
+
+:documentType a owl:DatatypeProperty ;
+    rdfs:label "documentType" ;
+    rdfs:domain :Circularity_dismantlingAndRemovalInformation_dismantlingAndRemovalInformation ;
+    rdfs:range xsd:string .
+
+:documentURL a owl:DatatypeProperty ;
+    rdfs:label "documentURL" ;
+    rdfs:domain :Circularity_dismantlingAndRemovalInformation_dismantlingAndRemovalInformation ;
+    rdfs:range xsd:anyURI .
+
+:emailAddressOfSupplier a owl:DatatypeProperty ;
+    rdfs:label "emailAddressOfSupplier" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources ;
+    rdfs:range xsd:string .
+
+:endOfLifeInformation a owl:ObjectProperty ;
+    rdfs:label "endOfLifeInformation" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range :Circularity_endOfLifeInformation .
+
+:extinguishingAgent a owl:ObjectProperty ;
+    rdfs:label "extinguishingAgent" ;
+    rdfs:domain :Circularity_safetyMeasures ;
+    rdfs:range <urn:samm:io.BatteryPass.Circularity:1.2.0#ExtinguishingAgentsList> .
+
+:extinguishingAgent1 a owl:DatatypeProperty ;
+    rdfs:label "extinguishingAgent" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#ExtinguishingAgentsList> ;
+    rdfs:range xsd:string .
+
+:informationOnCollection a owl:DatatypeProperty ;
+    rdfs:label "informationOnCollection" ;
+    rdfs:domain :Circularity_endOfLifeInformation ;
+    rdfs:range xsd:anyURI .
+
+:mimeType a owl:DatatypeProperty ;
+    rdfs:label "mimeType" ;
+    rdfs:domain :Circularity_dismantlingAndRemovalInformation_dismantlingAndRemovalInformation ;
+    rdfs:range xsd:string .
+
+:nameOfSupplier a owl:DatatypeProperty ;
+    rdfs:label "nameOfSupplier" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources ;
+    rdfs:range xsd:string .
+
+:partName a owl:DatatypeProperty ;
+    rdfs:label "PartName"@en ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources_components_components ;
+    rdfs:range xsd:string .
+
+:partNumber a owl:DatatypeProperty ;
+    rdfs:label "partNumber" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources_components_components ;
+    rdfs:range xsd:string .
+
+:postConsumerShare a owl:DatatypeProperty ;
+    rdfs:label "postConsumerShare" ;
+    rdfs:domain :Circularity_recycledContent_recycledContent ;
+    rdfs:range xsd:float .
+
+:postalCode a owl:DatatypeProperty ;
+    rdfs:label "PostalCode"@en ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources_addressOfSupplier ;
+    rdfs:range xsd:string .
+
+:preConsumerShare a owl:DatatypeProperty ;
+    rdfs:label "preConsumerShare" ;
+    rdfs:domain :Circularity_recycledContent_recycledContent ;
+    rdfs:range xsd:float .
+
+:recycledContent a owl:ObjectProperty ;
+    rdfs:label "recycledContent" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.Circularity:1.2.0#RecycledContentList> .
+
+:recycledContent1 a owl:ObjectProperty ;
+    rdfs:label "recycledContent" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#RecycledContentList> ;
+    rdfs:range :Circularity_recycledContent_recycledContent .
+
+:recycledMaterial a owl:DatatypeProperty ;
+    rdfs:label "RecycledMaterial"@en ;
+    rdfs:domain :Circularity_recycledContent_recycledContent ;
+    rdfs:range xsd:string .
+
+:renewableContent a owl:DatatypeProperty ;
+    rdfs:label "RenewableContent"@en ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range xsd:float .
+
+:safetyInstructions a owl:DatatypeProperty ;
+    rdfs:label "safetyInstructions" ;
+    rdfs:domain :Circularity_safetyMeasures ;
+    rdfs:range xsd:anyURI .
+
+:safetyMeasures a owl:ObjectProperty ;
+    rdfs:label "safetyMeasures" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range :Circularity_safetyMeasures .
+
+:separateCollection a owl:DatatypeProperty ;
+    rdfs:label "separateCollection" ;
+    rdfs:domain :Circularity_endOfLifeInformation ;
+    rdfs:range xsd:anyURI .
+
+:sparePartSources a owl:ObjectProperty ;
+    rdfs:label "sparePartSources" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> ;
+    rdfs:range <urn:samm:io.BatteryPass.Circularity:1.2.0#SparePartSourcesList> .
+
+:sparePartSources1 a owl:ObjectProperty ;
+    rdfs:label "sparePartSources" ;
+    rdfs:domain <urn:samm:io.BatteryPass.Circularity:1.2.0#SparePartSourcesList> ;
+    rdfs:range :Circularity_sparePartSources_sparePartSources .
+
+:streetAddress a owl:DatatypeProperty ;
+    rdfs:label "streetAddress" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources_addressOfSupplier ;
+    rdfs:range xsd:string .
+
+:supplierWebAddress a owl:DatatypeProperty ;
+    rdfs:label "supplierWebAddress" ;
+    rdfs:domain :Circularity_sparePartSources_sparePartSources ;
+    rdfs:range xsd:anyURI .
+
+:wastePrevention a owl:DatatypeProperty ;
+    rdfs:label "wastePrevention" ;
+    rdfs:domain :Circularity_endOfLifeInformation ;
+    rdfs:range xsd:anyURI .
+
+<https://ontology.tno.nl/DataEcosystems/AasRdfConverter/0.2.0/> a owl:NamedIndividual,
+        prov:SoftwareAgent ;
+    rdfs:label "AAS–RDF Converter" ;
+    dcterms:source "https://gitlab.com/jesper-sk/aas-rdf-converter"^^xsd:anyURI ;
+    rdfs:comment "AAS to RDF converter created by TNO, the Netherlands Organisation for Applied Scientific Research" ;
+    owl:versionInfo "0.2.0" .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#ComponentList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "components" ;
+    rdfs:comment "Components available at supplier"@en .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#DocumentationList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "dismantlingAndRemovalInformation" ;
+    rdfs:comment """Dismantling and Removal information, including at least:- Exploded diagrams of the battery system/pack showing the location of battery cells- Disassembly sequences- Type and number of fastening techniques to be unlocked- Tools required for disassembly- Warnings if risk of damaging parts exists- Amount of cells used and layout. BR Annex XIII (2c)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.2"""@en .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#ExtinguishingAgentsList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "extinguishingAgent" ;
+    rdfs:comment "Usable extinguishing agents refering to classes of extinguishers (A, B, C, D, K).EUBR: Annex XIII (1a) ? Annex VI Part A (9)"@en .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#RecycledContentList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "recycledContent" ;
+    rdfs:comment """Share of material recovered from waste present in active materials for each battery model per year and per manufacturing plant.
+
+DIN DKE Spec 99100 chapter reference:  6.6.2.3 - 6.6.2.10"""@en .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#SparePartSourcesList> a owl:Class,
+        aas:SubmodelElementList ;
+    rdfs:label "sparePartSources" ;
+    rdfs:comment """Contact details of sources for replacement spares. Postal address, including name and brand names, postal code and place, street and number, country, telephone, if any. BR Annex XIII (2b)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.3"""@en .
+
+:Circularity_safetyMeasures a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "SafetyMeasures"@en ;
+    rdfs:comment """Safety measures and instructions should also take past negative and extreme events as well as the separate data attributes ?battery status? and ?battery composition/chemistry? into account.
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.5"""@en .
+
+:Circularity_sparePartSources_sparePartSources_components_components a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "components" ;
+    rdfs:comment "Components available at supplier"@en .
+
+:Circularity_dismantlingAndRemovalInformation_dismantlingAndRemovalInformation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "dismantlingAndRemovalInformation" ;
+    rdfs:comment """Dismantling and Removal information, including at least:- Exploded diagrams of the battery system/pack showing the location of battery cells- Disassembly sequences- Type and number of fastening techniques to be unlocked- Tools required for disassembly- Warnings if risk of damaging parts exists- Amount of cells used and layout. BR Annex XIII (2c)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.2"""@en .
+
+:Circularity_endOfLifeInformation a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "EndOfLifeInformation"@en ;
+    rdfs:comment """Producer or producer responsibility organisations shall make information available to distributors and end-users on: the role of end-users in contributing to waste prevention, including by information on good practices and recommendations concerning the use of batteries aiming at extending their use phase and the possibilities of re-use, preparing for re-use, preparing for repurpose, repurposing and remanufacturing.
+
+DIN DKE Spec 99100 chapter reference: 6.6.3.2 - 6.6.3.4"""@en .
+
+:Circularity_recycledContent_recycledContent a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "recycledContent" ;
+    rdfs:comment """Share of material recovered from waste present in active materials for each battery model per year and per manufacturing plant.
+
+DIN DKE Spec 99100 chapter reference:  6.6.2.3 - 6.6.2.10"""@en .
+
+:Circularity_sparePartSources_sparePartSources_addressOfSupplier a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "addressOfSupplier" ;
+    rdfs:comment "Postal address of supplier for spare parts."@en .
+
+:Circularity_sparePartSources_sparePartSources a owl:Class,
+        aas:SubmodelElementCollection ;
+    rdfs:label "sparePartSources" ;
+    rdfs:comment """Contact details of sources for replacement spares. Postal address, including name and brand names, postal code and place, street and number, country, telephone, if any. BR Annex XIII (2b)
+
+DIN DKE Spec 99100 chapter reference: 6.6.1.3"""@en .
+
+<urn:samm:io.BatteryPass.Circularity:1.2.0#Circularity/submodel> a owl:Class,
+        aas:Submodel ;
+    rdfs:label "Circularity" ;
+    rdfs:comment "Dismantling information (including at least: exploded diagrams of the battery system/pack showing the location of battery cells; disassembly sequences; type and number of fastening techniques to be unlocked; tools required for disassembly; warnings if risk of damaging parts exists; amount of cells used and layout); part numbers for components and contact details of sources for replacement spares; safety measures (Annex XIII (2b-d)); usable extinguishing agent (Annex VI, Part A(9)). 2024 Circulor (for and on behalf of the Battery Pass Consortium). This work is licensed under a Creative Commons License Attribution-NonCommercial 4.0 International (CC BY-NC 4.0). Readers may reproduce material for their own publications, as long as it is not sold commercially and is given appropriate attribution."@en .
+
